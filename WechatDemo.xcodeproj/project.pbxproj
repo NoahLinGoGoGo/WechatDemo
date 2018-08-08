@@ -1,0 +1,924 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		208FFEB148D34396503A65B9 /* Pods_WechatDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDA60332661D267B819B76C /* Pods_WechatDemo.framework */; };
+		A701E70920EB28DE0055A05F /* chatBar_recordSelectedBg.png in Resources */ = {isa = PBXBuildFile; fileRef = A701E70620EB28DE0055A05F /* chatBar_recordSelectedBg.png */; };
+		A701E70A20EB28DE0055A05F /* chatBar_recordBg.png in Resources */ = {isa = PBXBuildFile; fileRef = A701E70720EB28DE0055A05F /* chatBar_recordBg.png */; };
+		A701E71220EC722B0055A05F /* VoiceSearchFeedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A701E71120EC722B0055A05F /* VoiceSearchFeedback@2x.png */; };
+		A701E71620EC772E0055A05F /* LSRecordMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701E71520EC772E0055A05F /* LSRecordMaskView.swift */; };
+		A701E71820EC79DF0055A05F /* VoiceSearchStartBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A701E71720EC79DF0055A05F /* VoiceSearchStartBtn@2x.png */; };
+		A701E72220ECBE4C0055A05F /* LSVoiceRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701E72120ECBE4C0055A05F /* LSVoiceRecordManager.swift */; };
+		A701E72420ECC72F0055A05F /* LSChatVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A701E72320ECC72F0055A05F /* LSChatVoiceCell.swift */; };
+		A703A9C420DCF4A6002E792F /* LSChatBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A703A9C320DCF4A6002E792F /* LSChatBottomBar.swift */; };
+		A709004420D20982002DB3BD /* LSChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709004320D20982002DB3BD /* LSChatViewModel.swift */; };
+		A709004820D21BFD002DB3BD /* LSSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709004720D21BFD002DB3BD /* LSSearchResultViewController.swift */; };
+		A721520520E247A8006053C7 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721520420E247A8006053C7 /* UIView+Border.swift */; };
+		A73043B320E4DF9200BCF5B2 /* LSChatBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73043B220E4DF9200BCF5B2 /* LSChatBaseCell.swift */; };
+		A7487BD320CBC2870001DA9E /* LSChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7487BD220CBC2870001DA9E /* LSChatListCell.swift */; };
+		A7535A3120D9DCF200626AE7 /* ReceiverGreenBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A2920D9DCF200626AE7 /* ReceiverGreenBG@2x.png */; };
+		A7535A3220D9DCF200626AE7 /* ReceiverShiteBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A2A20D9DCF200626AE7 /* ReceiverShiteBG@2x.png */; };
+		A7535A3320D9DCF200626AE7 /* ReceiverVoiceNodePlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A2B20D9DCF200626AE7 /* ReceiverVoiceNodePlaying.png */; };
+		A7535A3420D9DCF200626AE7 /* SenderAppNodeBkg_HL.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A2C20D9DCF200626AE7 /* SenderAppNodeBkg_HL.png */; };
+		A7535A3520D9DCF200626AE7 /* SenderBlueBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A2D20D9DCF200626AE7 /* SenderBlueBG@2x.png */; };
+		A7535A3620D9DCF200626AE7 /* SenderVoiceNodePlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A2E20D9DCF200626AE7 /* SenderVoiceNodePlaying.png */; };
+		A7535A3720D9DCF200626AE7 /* SenderWhiteBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A2F20D9DCF200626AE7 /* SenderWhiteBG@2x.png */; };
+		A7535A3820D9DCF200626AE7 /* VideoPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A7535A3020D9DCF200626AE7 /* VideoPlay.png */; };
+		A7535A3C20D9F7E500626AE7 /* NirKxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A7535A3A20D9F7E500626AE7 /* NirKxMenu.m */; };
+		A7535A4420DA04F400626AE7 /* LSChatImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7535A4320DA04F400626AE7 /* LSChatImageCell.swift */; };
+		A753EF1F20D0B2310052C427 /* addadd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A753EF1D20D0B2310052C427 /* addadd@3x.png */; };
+		A753EF2020D0B2310052C427 /* addadd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A753EF1E20D0B2310052C427 /* addadd@2x.png */; };
+		A753EF2720D207EB0052C427 /* LSChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753EF2620D207EA0052C427 /* LSChatController.swift */; };
+		A759AD9D20E5D82A0047B4DC /* LSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A759AD9C20E5D82A0047B4DC /* LSRequest.swift */; };
+		A759AD9F20E606F60047B4DC /* LSChatListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A759AD9E20E606F60047B4DC /* LSChatListCellViewModel.swift */; };
+		A75B5B2820EDC52D0052B5B2 /* chat_sender_audio_playing_000.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2020EDC52D0052B5B2 /* chat_sender_audio_playing_000.png */; };
+		A75B5B2920EDC52D0052B5B2 /* chat_sender_audio_playing_000@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2120EDC52D0052B5B2 /* chat_sender_audio_playing_000@2x.png */; };
+		A75B5B2A20EDC52D0052B5B2 /* chat_sender_audio_playing_001.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2220EDC52D0052B5B2 /* chat_sender_audio_playing_001.png */; };
+		A75B5B2B20EDC52D0052B5B2 /* chat_sender_audio_playing_001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2320EDC52D0052B5B2 /* chat_sender_audio_playing_001@2x.png */; };
+		A75B5B2C20EDC52D0052B5B2 /* chat_sender_audio_playing_002.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2420EDC52D0052B5B2 /* chat_sender_audio_playing_002.png */; };
+		A75B5B2D20EDC52D0052B5B2 /* chat_sender_audio_playing_002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2520EDC52D0052B5B2 /* chat_sender_audio_playing_002@2x.png */; };
+		A75B5B2E20EDC52D0052B5B2 /* chat_sender_audio_playing_003.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2620EDC52D0052B5B2 /* chat_sender_audio_playing_003.png */; };
+		A75B5B2F20EDC52D0052B5B2 /* chat_sender_audio_playing_003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B2720EDC52D0052B5B2 /* chat_sender_audio_playing_003@2x.png */; };
+		A75B5B3920EDC5370052B5B2 /* chat_receiver_audio_playing000.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3120EDC5370052B5B2 /* chat_receiver_audio_playing000.png */; };
+		A75B5B3A20EDC5370052B5B2 /* chat_receiver_audio_playing000@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3220EDC5370052B5B2 /* chat_receiver_audio_playing000@2x.png */; };
+		A75B5B3B20EDC5370052B5B2 /* chat_receiver_audio_playing001.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3320EDC5370052B5B2 /* chat_receiver_audio_playing001.png */; };
+		A75B5B3C20EDC5370052B5B2 /* chat_receiver_audio_playing001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3420EDC5370052B5B2 /* chat_receiver_audio_playing001@2x.png */; };
+		A75B5B3D20EDC5370052B5B2 /* chat_receiver_audio_playing002.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3520EDC5370052B5B2 /* chat_receiver_audio_playing002.png */; };
+		A75B5B3E20EDC5370052B5B2 /* chat_receiver_audio_playing002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3620EDC5370052B5B2 /* chat_receiver_audio_playing002@2x.png */; };
+		A75B5B3F20EDC5370052B5B2 /* chat_receiver_audio_playing003.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3720EDC5370052B5B2 /* chat_receiver_audio_playing003.png */; };
+		A75B5B4020EDC5370052B5B2 /* chat_receiver_audio_playing003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75B5B3820EDC5370052B5B2 /* chat_receiver_audio_playing003@2x.png */; };
+		A75F6B3620DDFA950054ABE0 /* 001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B2E20DDFA950054ABE0 /* 001@2x.png */; };
+		A75F6B3720DDFA950054ABE0 /* 002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B2F20DDFA950054ABE0 /* 002@2x.png */; };
+		A75F6B3820DDFA950054ABE0 /* 003@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B3020DDFA950054ABE0 /* 003@2x.png */; };
+		A75F6B3920DDFA950054ABE0 /* 005@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B3120DDFA950054ABE0 /* 005@2x.png */; };
+		A75F6B3A20DDFA950054ABE0 /* 006@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B3220DDFA950054ABE0 /* 006@2x.png */; };
+		A75F6B3B20DDFA950054ABE0 /* 007@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B3320DDFA950054ABE0 /* 007@2x.png */; };
+		A75F6B3C20DDFA950054ABE0 /* 008@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B3420DDFA950054ABE0 /* 008@2x.png */; };
+		A75F6B3D20DDFA950054ABE0 /* 009@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A75F6B3520DDFA950054ABE0 /* 009@2x.png */; };
+		A76C2ED020EA05B300514D6B /* LSChatCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C2ECF20EA05B300514D6B /* LSChatCellViewModel.swift */; };
+		A76C2ED220EA077100514D6B /* LSChatBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C2ED120EA077100514D6B /* LSChatBaseModel.swift */; };
+		A7E6DBDE20CF63C900F294D4 /* LSChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6DBDD20CF63C900F294D4 /* LSChatListViewModel.swift */; };
+		A7ED357F20EA13B400492851 /* myIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7ED357E20EA13B300492851 /* myIcon.jpg */; };
+		A7ED358320EA21C600492851 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7ED358220EA21C600492851 /* ImageIO.framework */; };
+		A7F5E2EC20CB5AA4008C46BF /* LSAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E2EB20CB5AA4008C46BF /* LSAppDelegate.swift */; };
+		A7F5E2F320CB5AA6008C46BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E2F220CB5AA6008C46BF /* Assets.xcassets */; };
+		A7F5E30120CB6C6C008C46BF /* LSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E30020CB6C6C008C46BF /* LSTabBarController.swift */; };
+		A7F5E30320CB6C88008C46BF /* LSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E30220CB6C88008C46BF /* LSNavigationController.swift */; };
+		A7F5E30720CB70FD008C46BF /* tabbar_contacts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E30520CB70FD008C46BF /* tabbar_contacts@3x.png */; };
+		A7F5E30820CB70FD008C46BF /* tabbar_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E30620CB70FD008C46BF /* tabbar_contacts@2x.png */; };
+		A7F5E30B20CB7110008C46BF /* tabbar_contactsHL@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E30920CB710F008C46BF /* tabbar_contactsHL@3x.png */; };
+		A7F5E30C20CB7110008C46BF /* tabbar_contactsHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E30A20CB710F008C46BF /* tabbar_contactsHL@2x.png */; };
+		A7F5E30F20CB7117008C46BF /* tabbar_discover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E30D20CB7117008C46BF /* tabbar_discover@2x.png */; };
+		A7F5E31020CB7117008C46BF /* tabbar_discover@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E30E20CB7117008C46BF /* tabbar_discover@3x.png */; };
+		A7F5E31320CB7120008C46BF /* tabbar_discoverHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31120CB7120008C46BF /* tabbar_discoverHL@2x.png */; };
+		A7F5E31420CB7120008C46BF /* tabbar_discoverHL@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31220CB7120008C46BF /* tabbar_discoverHL@3x.png */; };
+		A7F5E31720CB7125008C46BF /* tabbar_mainframe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31520CB7125008C46BF /* tabbar_mainframe@3x.png */; };
+		A7F5E31820CB7125008C46BF /* tabbar_mainframe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31620CB7125008C46BF /* tabbar_mainframe@2x.png */; };
+		A7F5E31B20CB712C008C46BF /* tabbar_mainframeHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31920CB712C008C46BF /* tabbar_mainframeHL@2x.png */; };
+		A7F5E31C20CB712C008C46BF /* tabbar_mainframeHL@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31A20CB712C008C46BF /* tabbar_mainframeHL@3x.png */; };
+		A7F5E31F20CB7133008C46BF /* tabbar_me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31D20CB7133008C46BF /* tabbar_me@3x.png */; };
+		A7F5E32020CB7133008C46BF /* tabbar_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E31E20CB7133008C46BF /* tabbar_me@2x.png */; };
+		A7F5E32320CB713A008C46BF /* tabbar_meHL@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E32120CB713A008C46BF /* tabbar_meHL@3x.png */; };
+		A7F5E32420CB713A008C46BF /* tabbar_meHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E32220CB713A008C46BF /* tabbar_meHL@2x.png */; };
+		A7F5E32720CB71D9008C46BF /* LSChatListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E32620CB71D9008C46BF /* LSChatListController.swift */; };
+		A7F5E32920CB7236008C46BF /* LSContactListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E32820CB7236008C46BF /* LSContactListController.swift */; };
+		A7F5E32B20CB726E008C46BF /* LSDiscoveryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E32A20CB726E008C46BF /* LSDiscoveryController.swift */; };
+		A7F5E32D20CB7293008C46BF /* LSMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E32C20CB7293008C46BF /* LSMeController.swift */; };
+		A7F5E32F20CB7CC4008C46BF /* LSGolbal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F5E32E20CB7CC4008C46BF /* LSGolbal.swift */; };
+		A7F5E33820CB8695008C46BF /* icon0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E33320CB8694008C46BF /* icon0.jpg */; };
+		A7F5E33920CB8695008C46BF /* icon3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E33420CB8694008C46BF /* icon3.jpg */; };
+		A7F5E33A20CB8695008C46BF /* icon4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E33520CB8694008C46BF /* icon4.jpg */; };
+		A7F5E33B20CB8695008C46BF /* icon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E33620CB8694008C46BF /* icon1.jpg */; };
+		A7F5E33C20CB8695008C46BF /* icon2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A7F5E33720CB8694008C46BF /* icon2.jpg */; };
+		A7F9130520D3A53700A2DCC2 /* LSChatTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9130420D3A53700A2DCC2 /* LSChatTextCell.swift */; };
+		A7F9131B20D3AF1500A2DCC2 /* LSChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9131A20D3AF1500A2DCC2 /* LSChatTableView.swift */; };
+		A7FFE7D520E383F400E3C47E /* LSChatListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFE7D420E383F400E3C47E /* LSChatListTableView.swift */; };
+		A7FFE7D720E3871100E3C47E /* LSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFE7D620E3871100E3C47E /* LSBaseViewController.swift */; };
+		A7FFE7DB20E38B5C00E3C47E /* setup_ground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7FFE7D920E38B5C00E3C47E /* setup_ground@2x.png */; };
+		A7FFE7DC20E38B5C00E3C47E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = A7FFE7DA20E38B5C00E3C47E /* placeholder.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A7E6DBE220CFAADE00F294D4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A701E70620EB28DE0055A05F /* chatBar_recordSelectedBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_recordSelectedBg.png; sourceTree = "<group>"; };
+		A701E70720EB28DE0055A05F /* chatBar_recordBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_recordBg.png; sourceTree = "<group>"; };
+		A701E71120EC722B0055A05F /* VoiceSearchFeedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback@2x.png"; sourceTree = "<group>"; };
+		A701E71520EC772E0055A05F /* LSRecordMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSRecordMaskView.swift; sourceTree = "<group>"; };
+		A701E71720EC79DF0055A05F /* VoiceSearchStartBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchStartBtn@2x.png"; sourceTree = "<group>"; };
+		A701E72120ECBE4C0055A05F /* LSVoiceRecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSVoiceRecordManager.swift; sourceTree = "<group>"; };
+		A701E72320ECC72F0055A05F /* LSChatVoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatVoiceCell.swift; sourceTree = "<group>"; };
+		A703A9C320DCF4A6002E792F /* LSChatBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatBottomBar.swift; sourceTree = "<group>"; };
+		A709004320D20982002DB3BD /* LSChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatViewModel.swift; sourceTree = "<group>"; };
+		A709004720D21BFD002DB3BD /* LSSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSSearchResultViewController.swift; sourceTree = "<group>"; };
+		A721520420E247A8006053C7 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		A73043B220E4DF9200BCF5B2 /* LSChatBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatBaseCell.swift; sourceTree = "<group>"; };
+		A7487BD220CBC2870001DA9E /* LSChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatListCell.swift; sourceTree = "<group>"; };
+		A7535A2920D9DCF200626AE7 /* ReceiverGreenBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReceiverGreenBG@2x.png"; sourceTree = "<group>"; };
+		A7535A2A20D9DCF200626AE7 /* ReceiverShiteBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReceiverShiteBG@2x.png"; sourceTree = "<group>"; };
+		A7535A2B20D9DCF200626AE7 /* ReceiverVoiceNodePlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReceiverVoiceNodePlaying.png; sourceTree = "<group>"; };
+		A7535A2C20D9DCF200626AE7 /* SenderAppNodeBkg_HL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SenderAppNodeBkg_HL.png; sourceTree = "<group>"; };
+		A7535A2D20D9DCF200626AE7 /* SenderBlueBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderBlueBG@2x.png"; sourceTree = "<group>"; };
+		A7535A2E20D9DCF200626AE7 /* SenderVoiceNodePlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SenderVoiceNodePlaying.png; sourceTree = "<group>"; };
+		A7535A2F20D9DCF200626AE7 /* SenderWhiteBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderWhiteBG@2x.png"; sourceTree = "<group>"; };
+		A7535A3020D9DCF200626AE7 /* VideoPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VideoPlay.png; sourceTree = "<group>"; };
+		A7535A3920D9F7E400626AE7 /* WechatDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WechatDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7535A3A20D9F7E500626AE7 /* NirKxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NirKxMenu.m; sourceTree = "<group>"; };
+		A7535A3B20D9F7E500626AE7 /* NirKxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NirKxMenu.h; sourceTree = "<group>"; };
+		A7535A4320DA04F400626AE7 /* LSChatImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatImageCell.swift; sourceTree = "<group>"; };
+		A753EF1D20D0B2310052C427 /* addadd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addadd@3x.png"; sourceTree = "<group>"; };
+		A753EF1E20D0B2310052C427 /* addadd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addadd@2x.png"; sourceTree = "<group>"; };
+		A753EF2620D207EA0052C427 /* LSChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSChatController.swift; sourceTree = "<group>"; };
+		A759AD9C20E5D82A0047B4DC /* LSRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSRequest.swift; sourceTree = "<group>"; };
+		A759AD9E20E606F60047B4DC /* LSChatListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatListCellViewModel.swift; sourceTree = "<group>"; };
+		A75B5B2020EDC52D0052B5B2 /* chat_sender_audio_playing_000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_sender_audio_playing_000.png; sourceTree = "<group>"; };
+		A75B5B2120EDC52D0052B5B2 /* chat_sender_audio_playing_000@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_sender_audio_playing_000@2x.png"; sourceTree = "<group>"; };
+		A75B5B2220EDC52D0052B5B2 /* chat_sender_audio_playing_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_sender_audio_playing_001.png; sourceTree = "<group>"; };
+		A75B5B2320EDC52D0052B5B2 /* chat_sender_audio_playing_001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_sender_audio_playing_001@2x.png"; sourceTree = "<group>"; };
+		A75B5B2420EDC52D0052B5B2 /* chat_sender_audio_playing_002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_sender_audio_playing_002.png; sourceTree = "<group>"; };
+		A75B5B2520EDC52D0052B5B2 /* chat_sender_audio_playing_002@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_sender_audio_playing_002@2x.png"; sourceTree = "<group>"; };
+		A75B5B2620EDC52D0052B5B2 /* chat_sender_audio_playing_003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_sender_audio_playing_003.png; sourceTree = "<group>"; };
+		A75B5B2720EDC52D0052B5B2 /* chat_sender_audio_playing_003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_sender_audio_playing_003@2x.png"; sourceTree = "<group>"; };
+		A75B5B3120EDC5370052B5B2 /* chat_receiver_audio_playing000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_receiver_audio_playing000.png; sourceTree = "<group>"; };
+		A75B5B3220EDC5370052B5B2 /* chat_receiver_audio_playing000@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_receiver_audio_playing000@2x.png"; sourceTree = "<group>"; };
+		A75B5B3320EDC5370052B5B2 /* chat_receiver_audio_playing001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_receiver_audio_playing001.png; sourceTree = "<group>"; };
+		A75B5B3420EDC5370052B5B2 /* chat_receiver_audio_playing001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_receiver_audio_playing001@2x.png"; sourceTree = "<group>"; };
+		A75B5B3520EDC5370052B5B2 /* chat_receiver_audio_playing002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_receiver_audio_playing002.png; sourceTree = "<group>"; };
+		A75B5B3620EDC5370052B5B2 /* chat_receiver_audio_playing002@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_receiver_audio_playing002@2x.png"; sourceTree = "<group>"; };
+		A75B5B3720EDC5370052B5B2 /* chat_receiver_audio_playing003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_receiver_audio_playing003.png; sourceTree = "<group>"; };
+		A75B5B3820EDC5370052B5B2 /* chat_receiver_audio_playing003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_receiver_audio_playing003@2x.png"; sourceTree = "<group>"; };
+		A75F6B2E20DDFA950054ABE0 /* 001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "001@2x.png"; sourceTree = "<group>"; };
+		A75F6B2F20DDFA950054ABE0 /* 002@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "002@2x.png"; sourceTree = "<group>"; };
+		A75F6B3020DDFA950054ABE0 /* 003@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "003@2x.png"; sourceTree = "<group>"; };
+		A75F6B3120DDFA950054ABE0 /* 005@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "005@2x.png"; sourceTree = "<group>"; };
+		A75F6B3220DDFA950054ABE0 /* 006@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "006@2x.png"; sourceTree = "<group>"; };
+		A75F6B3320DDFA950054ABE0 /* 007@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "007@2x.png"; sourceTree = "<group>"; };
+		A75F6B3420DDFA950054ABE0 /* 008@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "008@2x.png"; sourceTree = "<group>"; };
+		A75F6B3520DDFA950054ABE0 /* 009@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "009@2x.png"; sourceTree = "<group>"; };
+		A76137FDB65B85F7A08B6267 /* Pods-WechatDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A76C2ECF20EA05B300514D6B /* LSChatCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatCellViewModel.swift; sourceTree = "<group>"; };
+		A76C2ED120EA077100514D6B /* LSChatBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatBaseModel.swift; sourceTree = "<group>"; };
+		A7E6DBDD20CF63C900F294D4 /* LSChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatListViewModel.swift; sourceTree = "<group>"; };
+		A7ED357E20EA13B300492851 /* myIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = myIcon.jpg; sourceTree = "<group>"; };
+		A7ED358220EA21C600492851 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		A7F5E2E820CB5AA3008C46BF /* WechatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WechatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7F5E2EB20CB5AA4008C46BF /* LSAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSAppDelegate.swift; sourceTree = "<group>"; };
+		A7F5E2F220CB5AA6008C46BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7F5E2F720CB5AA7008C46BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7F5E30020CB6C6C008C46BF /* LSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSTabBarController.swift; sourceTree = "<group>"; };
+		A7F5E30220CB6C88008C46BF /* LSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSNavigationController.swift; sourceTree = "<group>"; };
+		A7F5E30520CB70FD008C46BF /* tabbar_contacts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@3x.png"; sourceTree = "<group>"; };
+		A7F5E30620CB70FD008C46BF /* tabbar_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contacts@2x.png"; sourceTree = "<group>"; };
+		A7F5E30920CB710F008C46BF /* tabbar_contactsHL@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contactsHL@3x.png"; sourceTree = "<group>"; };
+		A7F5E30A20CB710F008C46BF /* tabbar_contactsHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_contactsHL@2x.png"; sourceTree = "<group>"; };
+		A7F5E30D20CB7117008C46BF /* tabbar_discover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discover@2x.png"; sourceTree = "<group>"; };
+		A7F5E30E20CB7117008C46BF /* tabbar_discover@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discover@3x.png"; sourceTree = "<group>"; };
+		A7F5E31120CB7120008C46BF /* tabbar_discoverHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discoverHL@2x.png"; sourceTree = "<group>"; };
+		A7F5E31220CB7120008C46BF /* tabbar_discoverHL@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discoverHL@3x.png"; sourceTree = "<group>"; };
+		A7F5E31520CB7125008C46BF /* tabbar_mainframe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mainframe@3x.png"; sourceTree = "<group>"; };
+		A7F5E31620CB7125008C46BF /* tabbar_mainframe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mainframe@2x.png"; sourceTree = "<group>"; };
+		A7F5E31920CB712C008C46BF /* tabbar_mainframeHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mainframeHL@2x.png"; sourceTree = "<group>"; };
+		A7F5E31A20CB712C008C46BF /* tabbar_mainframeHL@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mainframeHL@3x.png"; sourceTree = "<group>"; };
+		A7F5E31D20CB7133008C46BF /* tabbar_me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@3x.png"; sourceTree = "<group>"; };
+		A7F5E31E20CB7133008C46BF /* tabbar_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@2x.png"; sourceTree = "<group>"; };
+		A7F5E32120CB713A008C46BF /* tabbar_meHL@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@3x.png"; sourceTree = "<group>"; };
+		A7F5E32220CB713A008C46BF /* tabbar_meHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_meHL@2x.png"; sourceTree = "<group>"; };
+		A7F5E32620CB71D9008C46BF /* LSChatListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatListController.swift; sourceTree = "<group>"; };
+		A7F5E32820CB7236008C46BF /* LSContactListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListController.swift; sourceTree = "<group>"; };
+		A7F5E32A20CB726E008C46BF /* LSDiscoveryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSDiscoveryController.swift; sourceTree = "<group>"; };
+		A7F5E32C20CB7293008C46BF /* LSMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSMeController.swift; sourceTree = "<group>"; };
+		A7F5E32E20CB7CC4008C46BF /* LSGolbal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSGolbal.swift; sourceTree = "<group>"; };
+		A7F5E33320CB8694008C46BF /* icon0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon0.jpg; sourceTree = "<group>"; };
+		A7F5E33420CB8694008C46BF /* icon3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon3.jpg; sourceTree = "<group>"; };
+		A7F5E33520CB8694008C46BF /* icon4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon4.jpg; sourceTree = "<group>"; };
+		A7F5E33620CB8694008C46BF /* icon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon1.jpg; sourceTree = "<group>"; };
+		A7F5E33720CB8694008C46BF /* icon2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon2.jpg; sourceTree = "<group>"; };
+		A7F9130420D3A53700A2DCC2 /* LSChatTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatTextCell.swift; sourceTree = "<group>"; };
+		A7F9131A20D3AF1500A2DCC2 /* LSChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatTableView.swift; sourceTree = "<group>"; };
+		A7FFE7D420E383F400E3C47E /* LSChatListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatListTableView.swift; sourceTree = "<group>"; };
+		A7FFE7D620E3871100E3C47E /* LSBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBaseViewController.swift; sourceTree = "<group>"; };
+		A7FFE7D920E38B5C00E3C47E /* setup_ground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setup_ground@2x.png"; sourceTree = "<group>"; };
+		A7FFE7DA20E38B5C00E3C47E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		CDDA60332661D267B819B76C /* Pods_WechatDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WechatDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81FFB54613A8AB755739A35 /* Pods-WechatDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7F5E2E520CB5AA3008C46BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7ED358320EA21C600492851 /* ImageIO.framework in Frameworks */,
+				208FFEB148D34396503A65B9 /* Pods_WechatDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C8AABAAD4964F5F58FCD778 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7ED358220EA21C600492851 /* ImageIO.framework */,
+				CDDA60332661D267B819B76C /* Pods_WechatDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		66ECB839BFCE2F2141412E0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D81FFB54613A8AB755739A35 /* Pods-WechatDemo.debug.xcconfig */,
+				A76137FDB65B85F7A08B6267 /* Pods-WechatDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A730441320E5D2A000BCF5B2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A7535A3920D9F7E400626AE7 /* WechatDemo-Bridging-Header.h */,
+				A721520420E247A8006053C7 /* UIView+Border.swift */,
+				A759AD9C20E5D82A0047B4DC /* LSRequest.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A7535A2820D9DCF200626AE7 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+				A75B5B3020EDC5370052B5B2 /* receiver_animate */,
+				A75B5B1F20EDC52D0052B5B2 /* sender_animate */,
+				A7535A2920D9DCF200626AE7 /* ReceiverGreenBG@2x.png */,
+				A7535A2A20D9DCF200626AE7 /* ReceiverShiteBG@2x.png */,
+				A7535A2B20D9DCF200626AE7 /* ReceiverVoiceNodePlaying.png */,
+				A7535A2C20D9DCF200626AE7 /* SenderAppNodeBkg_HL.png */,
+				A7535A2D20D9DCF200626AE7 /* SenderBlueBG@2x.png */,
+				A7535A2E20D9DCF200626AE7 /* SenderVoiceNodePlaying.png */,
+				A7535A2F20D9DCF200626AE7 /* SenderWhiteBG@2x.png */,
+				A7535A3020D9DCF200626AE7 /* VideoPlay.png */,
+			);
+			path = chat;
+			sourceTree = "<group>";
+		};
+		A7535A3D20D9F7EA00626AE7 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				A7535A3B20D9F7E500626AE7 /* NirKxMenu.h */,
+				A7535A3A20D9F7E500626AE7 /* NirKxMenu.m */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		A75B5B1F20EDC52D0052B5B2 /* sender_animate */ = {
+			isa = PBXGroup;
+			children = (
+				A75B5B2020EDC52D0052B5B2 /* chat_sender_audio_playing_000.png */,
+				A75B5B2120EDC52D0052B5B2 /* chat_sender_audio_playing_000@2x.png */,
+				A75B5B2220EDC52D0052B5B2 /* chat_sender_audio_playing_001.png */,
+				A75B5B2320EDC52D0052B5B2 /* chat_sender_audio_playing_001@2x.png */,
+				A75B5B2420EDC52D0052B5B2 /* chat_sender_audio_playing_002.png */,
+				A75B5B2520EDC52D0052B5B2 /* chat_sender_audio_playing_002@2x.png */,
+				A75B5B2620EDC52D0052B5B2 /* chat_sender_audio_playing_003.png */,
+				A75B5B2720EDC52D0052B5B2 /* chat_sender_audio_playing_003@2x.png */,
+			);
+			path = sender_animate;
+			sourceTree = "<group>";
+		};
+		A75B5B3020EDC5370052B5B2 /* receiver_animate */ = {
+			isa = PBXGroup;
+			children = (
+				A75B5B3120EDC5370052B5B2 /* chat_receiver_audio_playing000.png */,
+				A75B5B3220EDC5370052B5B2 /* chat_receiver_audio_playing000@2x.png */,
+				A75B5B3320EDC5370052B5B2 /* chat_receiver_audio_playing001.png */,
+				A75B5B3420EDC5370052B5B2 /* chat_receiver_audio_playing001@2x.png */,
+				A75B5B3520EDC5370052B5B2 /* chat_receiver_audio_playing002.png */,
+				A75B5B3620EDC5370052B5B2 /* chat_receiver_audio_playing002@2x.png */,
+				A75B5B3720EDC5370052B5B2 /* chat_receiver_audio_playing003.png */,
+				A75B5B3820EDC5370052B5B2 /* chat_receiver_audio_playing003@2x.png */,
+			);
+			path = receiver_animate;
+			sourceTree = "<group>";
+		};
+		A75F6B2D20DDFA950054ABE0 /* chatBar */ = {
+			isa = PBXGroup;
+			children = (
+				A75F6B2E20DDFA950054ABE0 /* 001@2x.png */,
+				A75F6B2F20DDFA950054ABE0 /* 002@2x.png */,
+				A75F6B3020DDFA950054ABE0 /* 003@2x.png */,
+				A75F6B3120DDFA950054ABE0 /* 005@2x.png */,
+				A75F6B3220DDFA950054ABE0 /* 006@2x.png */,
+				A75F6B3320DDFA950054ABE0 /* 007@2x.png */,
+				A75F6B3420DDFA950054ABE0 /* 008@2x.png */,
+				A75F6B3520DDFA950054ABE0 /* 009@2x.png */,
+				A701E71120EC722B0055A05F /* VoiceSearchFeedback@2x.png */,
+				A701E70720EB28DE0055A05F /* chatBar_recordBg.png */,
+				A701E70620EB28DE0055A05F /* chatBar_recordSelectedBg.png */,
+			);
+			path = chatBar;
+			sourceTree = "<group>";
+		};
+		A7E6DBD920CF5F5800F294D4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5E32620CB71D9008C46BF /* LSChatListController.swift */,
+				A753EF2620D207EA0052C427 /* LSChatController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7E6DBDB20CF5F6700F294D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7FFE7D420E383F400E3C47E /* LSChatListTableView.swift */,
+				A7487BD220CBC2870001DA9E /* LSChatListCell.swift */,
+				A7F9131A20D3AF1500A2DCC2 /* LSChatTableView.swift */,
+				A73043B220E4DF9200BCF5B2 /* LSChatBaseCell.swift */,
+				A7F9130420D3A53700A2DCC2 /* LSChatTextCell.swift */,
+				A7535A4320DA04F400626AE7 /* LSChatImageCell.swift */,
+				A701E72320ECC72F0055A05F /* LSChatVoiceCell.swift */,
+				A703A9C320DCF4A6002E792F /* LSChatBottomBar.swift */,
+				A701E71520EC772E0055A05F /* LSRecordMaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A7E6DBDC20CF5F7100F294D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A76C2ED120EA077100514D6B /* LSChatBaseModel.swift */,
+				A7E6DBDD20CF63C900F294D4 /* LSChatListViewModel.swift */,
+				A759AD9E20E606F60047B4DC /* LSChatListCellViewModel.swift */,
+				A709004320D20982002DB3BD /* LSChatViewModel.swift */,
+				A76C2ECF20EA05B300514D6B /* LSChatCellViewModel.swift */,
+				A701E72120ECBE4C0055A05F /* LSVoiceRecordManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A7F5E2DF20CB5AA2008C46BF = {
+			isa = PBXGroup;
+			children = (
+				A7F5E2EA20CB5AA3008C46BF /* WechatDemo */,
+				A7F5E2E920CB5AA3008C46BF /* Products */,
+				66ECB839BFCE2F2141412E0A /* Pods */,
+				1C8AABAAD4964F5F58FCD778 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A7F5E2E920CB5AA3008C46BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5E2E820CB5AA3008C46BF /* WechatDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7F5E2EA20CB5AA3008C46BF /* WechatDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5E32520CB7164008C46BF /* Classes */,
+				A7F5E30420CB70EE008C46BF /* Image */,
+				A7F5E2F220CB5AA6008C46BF /* Assets.xcassets */,
+				A7F5E2F720CB5AA7008C46BF /* Info.plist */,
+			);
+			path = WechatDemo;
+			sourceTree = "<group>";
+		};
+		A7F5E2FF20CB5C6A008C46BF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5E2EB20CB5AA4008C46BF /* LSAppDelegate.swift */,
+				A7F5E30020CB6C6C008C46BF /* LSTabBarController.swift */,
+				A7F5E30220CB6C88008C46BF /* LSNavigationController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A7F5E30420CB70EE008C46BF /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A75F6B2D20DDFA950054ABE0 /* chatBar */,
+				A7535A2820D9DCF200626AE7 /* chat */,
+				A7F9130620D3A75600A2DCC2 /* Tabbar */,
+				A7F9130720D3A76500A2DCC2 /* UserIcon */,
+				A7F9130820D3A77A00A2DCC2 /* Common */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A7F5E32520CB7164008C46BF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5E2FF20CB5C6A008C46BF /* Main */,
+				A7FFE7D820E3871700E3C47E /* Base */,
+				A7F5E33020CB85F0008C46BF /* Chat */,
+				A7F5E32820CB7236008C46BF /* LSContactListController.swift */,
+				A7F5E32A20CB726E008C46BF /* LSDiscoveryController.swift */,
+				A7F5E32C20CB7293008C46BF /* LSMeController.swift */,
+				A7F5E32E20CB7CC4008C46BF /* LSGolbal.swift */,
+				A7535A3D20D9F7EA00626AE7 /* Third */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A7F5E33020CB85F0008C46BF /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A7E6DBDC20CF5F7100F294D4 /* ViewModel */,
+				A7E6DBD920CF5F5800F294D4 /* Controller */,
+				A7E6DBDB20CF5F6700F294D4 /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A7F9130620D3A75600A2DCC2 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5E30620CB70FD008C46BF /* tabbar_contacts@2x.png */,
+				A7F5E30520CB70FD008C46BF /* tabbar_contacts@3x.png */,
+				A7F5E30A20CB710F008C46BF /* tabbar_contactsHL@2x.png */,
+				A7F5E30920CB710F008C46BF /* tabbar_contactsHL@3x.png */,
+				A7F5E30D20CB7117008C46BF /* tabbar_discover@2x.png */,
+				A7F5E30E20CB7117008C46BF /* tabbar_discover@3x.png */,
+				A7F5E31120CB7120008C46BF /* tabbar_discoverHL@2x.png */,
+				A7F5E31220CB7120008C46BF /* tabbar_discoverHL@3x.png */,
+				A7F5E31620CB7125008C46BF /* tabbar_mainframe@2x.png */,
+				A7F5E31520CB7125008C46BF /* tabbar_mainframe@3x.png */,
+				A7F5E31920CB712C008C46BF /* tabbar_mainframeHL@2x.png */,
+				A7F5E31A20CB712C008C46BF /* tabbar_mainframeHL@3x.png */,
+				A7F5E31E20CB7133008C46BF /* tabbar_me@2x.png */,
+				A7F5E31D20CB7133008C46BF /* tabbar_me@3x.png */,
+				A7F5E32220CB713A008C46BF /* tabbar_meHL@2x.png */,
+				A7F5E32120CB713A008C46BF /* tabbar_meHL@3x.png */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		A7F9130720D3A76500A2DCC2 /* UserIcon */ = {
+			isa = PBXGroup;
+			children = (
+				A7F5E33320CB8694008C46BF /* icon0.jpg */,
+				A7F5E33620CB8694008C46BF /* icon1.jpg */,
+				A7F5E33720CB8694008C46BF /* icon2.jpg */,
+				A7F5E33420CB8694008C46BF /* icon3.jpg */,
+				A7F5E33520CB8694008C46BF /* icon4.jpg */,
+				A7ED357E20EA13B300492851 /* myIcon.jpg */,
+			);
+			path = UserIcon;
+			sourceTree = "<group>";
+		};
+		A7F9130820D3A77A00A2DCC2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A701E71720EC79DF0055A05F /* VoiceSearchStartBtn@2x.png */,
+				A7FFE7DA20E38B5C00E3C47E /* placeholder.png */,
+				A7FFE7D920E38B5C00E3C47E /* setup_ground@2x.png */,
+				A753EF1E20D0B2310052C427 /* addadd@2x.png */,
+				A753EF1D20D0B2310052C427 /* addadd@3x.png */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A7FFE7D820E3871700E3C47E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A730441320E5D2A000BCF5B2 /* Helper */,
+				A7FFE7D620E3871100E3C47E /* LSBaseViewController.swift */,
+				A709004720D21BFD002DB3BD /* LSSearchResultViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7F5E2E720CB5AA3008C46BF /* WechatDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7F5E2FA20CB5AA7008C46BF /* Build configuration list for PBXNativeTarget "WechatDemo" */;
+			buildPhases = (
+				64C3E461EACD2C784110461A /* [CP] Check Pods Manifest.lock */,
+				A7F5E2E420CB5AA3008C46BF /* Sources */,
+				A7F5E2E520CB5AA3008C46BF /* Frameworks */,
+				A7F5E2E620CB5AA3008C46BF /* Resources */,
+				FEF18A9186759A22CEC1BE6E /* [CP] Embed Pods Frameworks */,
+				245BDE0EFB82E9E551763561 /* [CP] Copy Pods Resources */,
+				A7E6DBE220CFAADE00F294D4 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WechatDemo;
+			productName = WechatDemo;
+			productReference = A7F5E2E820CB5AA3008C46BF /* WechatDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7F5E2E020CB5AA2008C46BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LS;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = linshengqi;
+				TargetAttributes = {
+					A7F5E2E720CB5AA3008C46BF = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A7F5E2E320CB5AA2008C46BF /* Build configuration list for PBXProject "WechatDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A7F5E2DF20CB5AA2008C46BF;
+			productRefGroup = A7F5E2E920CB5AA3008C46BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7F5E2E720CB5AA3008C46BF /* WechatDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7F5E2E620CB5AA3008C46BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A75B5B3B20EDC5370052B5B2 /* chat_receiver_audio_playing001.png in Resources */,
+				A75F6B3A20DDFA950054ABE0 /* 006@2x.png in Resources */,
+				A75B5B3920EDC5370052B5B2 /* chat_receiver_audio_playing000.png in Resources */,
+				A7F5E31820CB7125008C46BF /* tabbar_mainframe@2x.png in Resources */,
+				A7F5E32320CB713A008C46BF /* tabbar_meHL@3x.png in Resources */,
+				A7F5E31C20CB712C008C46BF /* tabbar_mainframeHL@3x.png in Resources */,
+				A7F5E30C20CB7110008C46BF /* tabbar_contactsHL@2x.png in Resources */,
+				A7F5E30B20CB7110008C46BF /* tabbar_contactsHL@3x.png in Resources */,
+				A75B5B2A20EDC52D0052B5B2 /* chat_sender_audio_playing_001.png in Resources */,
+				A75B5B2B20EDC52D0052B5B2 /* chat_sender_audio_playing_001@2x.png in Resources */,
+				A7F5E30720CB70FD008C46BF /* tabbar_contacts@3x.png in Resources */,
+				A701E71220EC722B0055A05F /* VoiceSearchFeedback@2x.png in Resources */,
+				A701E70A20EB28DE0055A05F /* chatBar_recordBg.png in Resources */,
+				A7535A3520D9DCF200626AE7 /* SenderBlueBG@2x.png in Resources */,
+				A7F5E31320CB7120008C46BF /* tabbar_discoverHL@2x.png in Resources */,
+				A7535A3120D9DCF200626AE7 /* ReceiverGreenBG@2x.png in Resources */,
+				A753EF1F20D0B2310052C427 /* addadd@3x.png in Resources */,
+				A75B5B2F20EDC52D0052B5B2 /* chat_sender_audio_playing_003@2x.png in Resources */,
+				A7535A3720D9DCF200626AE7 /* SenderWhiteBG@2x.png in Resources */,
+				A701E70920EB28DE0055A05F /* chatBar_recordSelectedBg.png in Resources */,
+				A75B5B3F20EDC5370052B5B2 /* chat_receiver_audio_playing003.png in Resources */,
+				A75F6B3C20DDFA950054ABE0 /* 008@2x.png in Resources */,
+				A75B5B2E20EDC52D0052B5B2 /* chat_sender_audio_playing_003.png in Resources */,
+				A7F5E33C20CB8695008C46BF /* icon2.jpg in Resources */,
+				A7F5E31B20CB712C008C46BF /* tabbar_mainframeHL@2x.png in Resources */,
+				A7535A3320D9DCF200626AE7 /* ReceiverVoiceNodePlaying.png in Resources */,
+				A75F6B3D20DDFA950054ABE0 /* 009@2x.png in Resources */,
+				A7F5E33B20CB8695008C46BF /* icon1.jpg in Resources */,
+				A75B5B2820EDC52D0052B5B2 /* chat_sender_audio_playing_000.png in Resources */,
+				A7F5E2F320CB5AA6008C46BF /* Assets.xcassets in Resources */,
+				A75B5B2920EDC52D0052B5B2 /* chat_sender_audio_playing_000@2x.png in Resources */,
+				A753EF2020D0B2310052C427 /* addadd@2x.png in Resources */,
+				A7535A3820D9DCF200626AE7 /* VideoPlay.png in Resources */,
+				A7535A3620D9DCF200626AE7 /* SenderVoiceNodePlaying.png in Resources */,
+				A75B5B3C20EDC5370052B5B2 /* chat_receiver_audio_playing001@2x.png in Resources */,
+				A75F6B3B20DDFA950054ABE0 /* 007@2x.png in Resources */,
+				A75B5B2D20EDC52D0052B5B2 /* chat_sender_audio_playing_002@2x.png in Resources */,
+				A7F5E32020CB7133008C46BF /* tabbar_me@2x.png in Resources */,
+				A75B5B2C20EDC52D0052B5B2 /* chat_sender_audio_playing_002.png in Resources */,
+				A75B5B3E20EDC5370052B5B2 /* chat_receiver_audio_playing002@2x.png in Resources */,
+				A7F5E31420CB7120008C46BF /* tabbar_discoverHL@3x.png in Resources */,
+				A701E71820EC79DF0055A05F /* VoiceSearchStartBtn@2x.png in Resources */,
+				A7FFE7DC20E38B5C00E3C47E /* placeholder.png in Resources */,
+				A7ED357F20EA13B400492851 /* myIcon.jpg in Resources */,
+				A75B5B4020EDC5370052B5B2 /* chat_receiver_audio_playing003@2x.png in Resources */,
+				A7F5E31020CB7117008C46BF /* tabbar_discover@3x.png in Resources */,
+				A75B5B3D20EDC5370052B5B2 /* chat_receiver_audio_playing002.png in Resources */,
+				A7535A3220D9DCF200626AE7 /* ReceiverShiteBG@2x.png in Resources */,
+				A75F6B3720DDFA950054ABE0 /* 002@2x.png in Resources */,
+				A75F6B3920DDFA950054ABE0 /* 005@2x.png in Resources */,
+				A7F5E30820CB70FD008C46BF /* tabbar_contacts@2x.png in Resources */,
+				A7FFE7DB20E38B5C00E3C47E /* setup_ground@2x.png in Resources */,
+				A7F5E33920CB8695008C46BF /* icon3.jpg in Resources */,
+				A75F6B3820DDFA950054ABE0 /* 003@2x.png in Resources */,
+				A7F5E31F20CB7133008C46BF /* tabbar_me@3x.png in Resources */,
+				A75F6B3620DDFA950054ABE0 /* 001@2x.png in Resources */,
+				A7F5E31720CB7125008C46BF /* tabbar_mainframe@3x.png in Resources */,
+				A7F5E32420CB713A008C46BF /* tabbar_meHL@2x.png in Resources */,
+				A7F5E33A20CB8695008C46BF /* icon4.jpg in Resources */,
+				A75B5B3A20EDC5370052B5B2 /* chat_receiver_audio_playing000@2x.png in Resources */,
+				A7F5E30F20CB7117008C46BF /* tabbar_discover@2x.png in Resources */,
+				A7535A3420D9DCF200626AE7 /* SenderAppNodeBkg_HL.png in Resources */,
+				A7F5E33820CB8695008C46BF /* icon0.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		245BDE0EFB82E9E551763561 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64C3E461EACD2C784110461A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WechatDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEF18A9186759A22CEC1BE6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7F5E2E420CB5AA3008C46BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7FFE7D720E3871100E3C47E /* LSBaseViewController.swift in Sources */,
+				A7F5E32F20CB7CC4008C46BF /* LSGolbal.swift in Sources */,
+				A7F5E32D20CB7293008C46BF /* LSMeController.swift in Sources */,
+				A73043B320E4DF9200BCF5B2 /* LSChatBaseCell.swift in Sources */,
+				A7535A4420DA04F400626AE7 /* LSChatImageCell.swift in Sources */,
+				A7F5E32920CB7236008C46BF /* LSContactListController.swift in Sources */,
+				A7F5E30120CB6C6C008C46BF /* LSTabBarController.swift in Sources */,
+				A703A9C420DCF4A6002E792F /* LSChatBottomBar.swift in Sources */,
+				A7FFE7D520E383F400E3C47E /* LSChatListTableView.swift in Sources */,
+				A7F9130520D3A53700A2DCC2 /* LSChatTextCell.swift in Sources */,
+				A701E72420ECC72F0055A05F /* LSChatVoiceCell.swift in Sources */,
+				A7487BD320CBC2870001DA9E /* LSChatListCell.swift in Sources */,
+				A7F5E32720CB71D9008C46BF /* LSChatListController.swift in Sources */,
+				A7535A3C20D9F7E500626AE7 /* NirKxMenu.m in Sources */,
+				A7F5E2EC20CB5AA4008C46BF /* LSAppDelegate.swift in Sources */,
+				A759AD9D20E5D82A0047B4DC /* LSRequest.swift in Sources */,
+				A7F5E32B20CB726E008C46BF /* LSDiscoveryController.swift in Sources */,
+				A76C2ED020EA05B300514D6B /* LSChatCellViewModel.swift in Sources */,
+				A7F5E30320CB6C88008C46BF /* LSNavigationController.swift in Sources */,
+				A753EF2720D207EB0052C427 /* LSChatController.swift in Sources */,
+				A7E6DBDE20CF63C900F294D4 /* LSChatListViewModel.swift in Sources */,
+				A701E71620EC772E0055A05F /* LSRecordMaskView.swift in Sources */,
+				A709004420D20982002DB3BD /* LSChatViewModel.swift in Sources */,
+				A709004820D21BFD002DB3BD /* LSSearchResultViewController.swift in Sources */,
+				A721520520E247A8006053C7 /* UIView+Border.swift in Sources */,
+				A701E72220ECBE4C0055A05F /* LSVoiceRecordManager.swift in Sources */,
+				A76C2ED220EA077100514D6B /* LSChatBaseModel.swift in Sources */,
+				A7F9131B20D3AF1500A2DCC2 /* LSChatTableView.swift in Sources */,
+				A759AD9F20E606F60047B4DC /* LSChatListCellViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A7F5E2F820CB5AA7008C46BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A7F5E2F920CB5AA7008C46BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7F5E2FB20CB5AA7008C46BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D81FFB54613A8AB755739A35 /* Pods-WechatDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVJ6LFXQEF;
+				INFOPLIST_FILE = "$(SRCROOT)/WechatDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ddd.WechatDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WechatDemo/Classes/Base/Helper/WechatDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7F5E2FC20CB5AA7008C46BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A76137FDB65B85F7A08B6267 /* Pods-WechatDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVJ6LFXQEF;
+				INFOPLIST_FILE = "$(SRCROOT)/WechatDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ddd.WechatDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WechatDemo/Classes/Base/Helper/WechatDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7F5E2E320CB5AA2008C46BF /* Build configuration list for PBXProject "WechatDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F5E2F820CB5AA7008C46BF /* Debug */,
+				A7F5E2F920CB5AA7008C46BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7F5E2FA20CB5AA7008C46BF /* Build configuration list for PBXNativeTarget "WechatDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7F5E2FB20CB5AA7008C46BF /* Debug */,
+				A7F5E2FC20CB5AA7008C46BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7F5E2E020CB5AA2008C46BF /* Project object */;
+}
