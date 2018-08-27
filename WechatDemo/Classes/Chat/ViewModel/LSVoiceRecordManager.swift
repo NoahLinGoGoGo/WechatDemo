@@ -16,6 +16,27 @@ class LSVoiceRecordManager: NSObject {
     var file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
     
     
+    //判断是否允许访问麦克风
+    func AudioSessionPermissionIsOpen() -> Bool{
+        
+        let session = AVAudioSession.sharedInstance()
+        var allow = false
+        session.requestRecordPermission { (allowed) in
+            if !allowed{
+                let alertView = UIAlertView(title: "无法访问您的麦克风" , message: "请到设置 -> 隐私 -> 麦克风 ,打开访问权限", delegate: nil, cancelButtonTitle: "取消", otherButtonTitles: "好的")
+                alertView.show()
+                allow = false
+                
+            }else{
+                allow = true
+                
+            }
+            
+        }
+        return allow
+    }
+    
+    
     //开始录音
     func beginRecord(path: String) {
         let path = file_path?.appending("/\(path).wav")

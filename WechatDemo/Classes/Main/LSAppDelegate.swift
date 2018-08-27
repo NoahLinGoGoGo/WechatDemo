@@ -33,8 +33,8 @@ class LSAppDelegate: UIResponder, UIApplicationDelegate {
     func viewControllers(_ tabbarVC: UITabBarController) {
         let chat = LSNavigationController(rootViewController: LSChatListController())
         let contact = LSNavigationController(rootViewController: LSContactListController())
-        let discovery = LSNavigationController(rootViewController: LSDiscoveryController())
-        let me =   LSNavigationController(rootViewController: LSMeController())
+        let discovery = LSNavigationController(rootViewController: LSDiscoveryController(style: .grouped))
+        let me =   LSNavigationController(rootViewController: LSMeController(style: .grouped))
         
         tabbarControllerAddChildVc(tabbraVC: tabbarVC, childVC: chat, normalImage: "tabbar_mainframe", selectedImage: "tabbar_mainframeHL", title: "微信")
         tabbarControllerAddChildVc(tabbraVC: tabbarVC, childVC: contact, normalImage: "tabbar_contacts", selectedImage: "tabbar_contactsHL", title: "通讯录")

@@ -18,7 +18,7 @@ class LSChatTextCell: LSChatBaseCell {
         
         contentLabel.textColor = RGB(r: 51, g: 51, b: 51)
         contentLabel.numberOfLines = 0
-        contentLabel.font = titleFontSize
+        contentLabel.font = LSFontSize16
         contentView.addSubview(contentLabel)
         
     }
@@ -35,10 +35,10 @@ class LSChatTextCell: LSChatBaseCell {
    override func updateSubViewFrame()  {
      super.updateSubViewFrame()
         
-        let contentTextH  = (cellViewModel?.textContent.boundingRect(with: CGSize.init(width: Double(kScreenW * 0.6 + 30.0), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : titleFontSize] ,context: nil).size.height)! + 8.0
+        let contentTextH  = (cellViewModel?.textContent.boundingRect(with: CGSize.init(width: Double(kScreenW * 0.6 + 30.0), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : LSFontSize16] ,context: nil).size.height)! + 8.0
         
         
-        var contentTextW  = cellViewModel?.textContent.boundingRect(with: CGSize.init(width: Double(MAXFLOAT), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : titleFontSize] ,context: nil).size.width
+        var contentTextW  = cellViewModel?.textContent.boundingRect(with: CGSize.init(width: Double(MAXFLOAT), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : LSFontSize16] ,context: nil).size.width
         
         
         if contentTextW! > kScreenW * 0.7 {

@@ -13,8 +13,7 @@ class LSSearchResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        view.backgroundColor = RGB(r: 69, g: 69, b: 69)
 
     }
     

@@ -136,12 +136,10 @@ class LSChatListCell: UITableViewCell {
     
     
     @objc func cellClick(gesture: UIGestureRecognizer) {
-            removeGestureRecognizer(gesture)
             switch gesture.state {
             case .ended:
                 if gesture is  UITapGestureRecognizer {
                     backgroundColor = bgColor
-                    
                 }
 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
@@ -150,7 +148,6 @@ class LSChatListCell: UITableViewCell {
                     self.backgroundColor = RGB(r: 255, g: 255, b: 255)
                     self.viewModel?.unReadCout = 0
                     self.unReadLabel.removeFromSuperview()
-                    self.addGestureRecognizer(gesture)
                 }
                 
             default:

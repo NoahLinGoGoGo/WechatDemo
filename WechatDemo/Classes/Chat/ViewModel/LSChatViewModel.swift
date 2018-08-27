@@ -20,7 +20,7 @@ enum RecordBtnEvent : Int {
     case touchDragEnter
 }
 
-class LSChatViewModel: LSChatBaseModel {
+class LSChatViewModel: LSBaseReqViewModel {
     
     let texts: Array<String> = ["在吗","6月19日，武汉市动物园官微通报称，对网友反映的饲养员在工作时间出现的问题深感抱歉，已让涉事饲养员停职检查并调离岗位，并安排更具专业知识、爱心和责任心的管理员照顾伟伟的生活。","在干嘛","吃饭没"]
     

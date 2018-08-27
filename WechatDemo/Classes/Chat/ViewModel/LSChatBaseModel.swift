@@ -1,5 +1,5 @@
 //
-//  LSChatBaseModel.swift
+//  LSBaseReqViewModel.swift
 //  WechatDemo
 //
 //  Created by 周结论 on 2018/7/2.
@@ -11,7 +11,7 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 
-class LSChatBaseModel: NSObject {
+class LSBaseReqViewModel: NSObject {
 
     var request = LSRequest()
     var loadDataAction: Action<(), Any, NoError>?
@@ -19,11 +19,14 @@ class LSChatBaseModel: NSObject {
     
     override init() {
         super.init()
-        
+
+    }
+    
+    
+    func loadServeData()  {
         loadDataAction = Action.init(execute: getChatArray)
         loadDataAction?.apply().start()
     }
-    
     
     
     func getChatArray() -> SignalProducer<Any, NoError> {

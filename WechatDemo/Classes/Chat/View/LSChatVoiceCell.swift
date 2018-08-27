@@ -32,7 +32,7 @@ class LSChatVoiceCell: LSChatBaseCell {
         super.addsubViews()
         
         lengthLabel.textColor = RGB(r: 101, g: 101, b: 101)
-        lengthLabel.font = titleFontSize
+        lengthLabel.font = LSFontSize16
         contentView.addSubview(lengthLabel)
         contentView.addSubview(voiceImageView)
     }

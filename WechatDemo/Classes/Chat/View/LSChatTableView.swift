@@ -29,7 +29,7 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     init(viewModel: LSChatViewModel?) {
         super.init(frame: CGRect(), style: .plain)
         self.viewModel = viewModel
-        
+        viewModel?.loadServeData()
         initTableView()
         bindData()
     }
@@ -45,6 +45,10 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         })
         
         viewModel?.buttomBarSignal.observeValues { (event) in
+            
+            if !self.voiceRecordManager.AudioSessionPermissionIsOpen() {
+                return
+            }
             
             if event == .touchDown {
                 // 开始录音
@@ -108,6 +112,7 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         estimatedRowHeight = 0;
         estimatedSectionHeaderHeight = 0;
         estimatedSectionFooterHeight = 0;
+        showsVerticalScrollIndicator = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -195,7 +200,7 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         RowHeightArray.removeAll()
         for chatViewModel in dataArray! {
             if chatViewModel.msgType == .textMsg {
-                let contentTextHeight  = chatViewModel.textContent.boundingRect(with: CGSize.init(width: Double(kScreenW * 0.6 + 30.0), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : titleFontSize] ,context: nil).size.height + 8.0
+                let contentTextHeight  = chatViewModel.textContent.boundingRect(with: CGSize.init(width: Double(kScreenW * 0.6 + 30.0), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : LSFontSize16] ,context: nil).size.height + 8.0
                 RowHeightArray.append(contentTextHeight + 40.0)
                 
             } else if chatViewModel.msgType == .imageMsg {
