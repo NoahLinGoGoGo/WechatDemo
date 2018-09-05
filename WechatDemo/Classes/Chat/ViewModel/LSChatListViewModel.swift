@@ -16,6 +16,7 @@ class LSChatListViewModel: LSBaseReqViewModel {
     
     var dataArray: Array<LSChatListCellViewModel> = Array()
     let (chatListCellClickSignal , observerGesture) = Signal<LSChatListCellViewModel?, NoError>.pipe()
+    let (chatListScrolltoTopSignal , observerMiniProgram) = Signal<CGFloat, NoError>.pipe()
     
     var messages = ["这周末有空吗","你好","据最近消息称，布基纳法索已经在昨日与台湾当局断交","好的呀","据说这是最新的iPhone X","你好","三星与中兴和解","WWDC2018盛大开幕","在吗","你好","美国与中兴达成和解","🐔鸡","最近怎么样","在干嘛"]
     let names = ["微风细雨","百度CEO李彦宏","爸爸","弟弟","迈阿密","科比","大大大","嘿嘿嘿","花非花","起个名字好难","强迫症患者","真TM无聊的一批","来呀，造作啊","好呀呀呀","我是一只🐖","我还是只单身🐶","我是猪脚","我是男猪脚","童话里没有男猪脚","哈哈哈哈","王者","财哥","美女主管","僚机"]

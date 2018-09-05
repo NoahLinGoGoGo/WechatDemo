@@ -20,6 +20,7 @@ class LSChatBottomBar: UIView, UITextFieldDelegate {
     var plusBtn = UIButton(type: .custom)
     var textField = UITextField()
     var isVoiceState = false
+    var voiceRecordManager = LSVoiceRecordManager()
     let normalimage = UIImage(named:"chatBar_recordBg")?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 10)
     let selectImage = UIImage(named:"chatBar_recordSelectedBg")?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 10)
     
@@ -77,6 +78,8 @@ class LSChatBottomBar: UIView, UITextFieldDelegate {
         textField.delegate = self
         textField.backgroundColor = UIColor.white
         addSubview(textField)
+        
+
         
     }
     

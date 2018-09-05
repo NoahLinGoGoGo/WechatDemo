@@ -36,7 +36,6 @@ class LSChatController: UIViewController {
     func configureUI() {
         
         let toolBarH: CGFloat = 50.0
-        
        
         let toolBar = LSChatBottomBar(viewModel: viewModel)
         toolBar.frame = CGRect(x: 0, y: kScreenH - toolBarH, width: kScreenW, height: toolBarH)
@@ -53,7 +52,7 @@ class LSChatController: UIViewController {
             
             if cellViewModel.msgType == .imageMsg {
                 
-                // 微信此处需要从数据库里面去多张图片
+                // 微信此处需要从聊天记录里面读取多张图片
                 var images = [SKPhoto]()
                 let photo = SKPhoto.photoWithImageURL(cellViewModel.imageUrl)
                 photo.shouldCachePhotoURLImage = false // you can use image cache by true(NSCache)

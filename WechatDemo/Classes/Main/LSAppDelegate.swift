@@ -19,6 +19,7 @@ class LSAppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         let tabBarVc = LSTabBarController()
         self.window = UIWindow()
+        self.window?.backgroundColor = UIColor.white
         self.window?.frame  = UIScreen.main.bounds
         self.window?.rootViewController = tabBarVc
         self.window?.makeKeyAndVisible()

@@ -19,14 +19,18 @@ public let RGB51 = RGB(r: 51, g: 51, b: 51)
 
 public let LS_IS_IPHONE = UI_USER_INTERFACE_IDIOM() == .phone ? true : false
 
-public let Height_StatusBar = UIApplication.shared.statusBarFrame.size.height
-public let Height_NavBar = LS_IS_IPHONE_X() ? 88.0 : 64.0
-public let Height_TabBar = LS_IS_IPHONE_X() ? 83.0 : 49.0
+public let Height_StatusBar: CGFloat  = UIApplication.shared.statusBarFrame.size.height
+public let Height_NavBarAndStatusBar: CGFloat = LS_IS_IPHONE_X() ? 88.0 : 64.0
+public let Height_TabBar: CGFloat  = LS_IS_IPHONE_X() ? 83.0 : 49.0
 
 
 let chatListClickNotification = "chatListClickNotification"
 
 
+
+
+// 小程序header
+let miniProgramDefaultH: CGFloat = 250.0
 
 public let LSFontSize16 = UIFont.systemFont(ofSize: 16.0)
 

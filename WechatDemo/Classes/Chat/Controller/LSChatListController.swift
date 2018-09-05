@@ -25,22 +25,35 @@ class LSChatListController: LSBaseViewController {
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+      
+    }
+    
+    
     //MARK:- Function    
     override func initUI() {
         title = "微信"
         showSearchController = true
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "addadd")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showChatListMenu))
         
-        
-        let tableView = LSChatListTableView(viewModel: viewModel)
+        let tableView = LSChatListTableView(viewModel: viewModel, bar: bar)
         tableView.frame = view.bounds
-        tableView.tableHeaderView = bar
+//        tableView.tableHeaderView = bar
         view.addSubview(tableView)
         
+        // 自定义类topMiniProgramView
+        // viewModel 中处理topMiniProgramView数据与交互
+        // 问题点：设置了tableHeaderView后下拉不会显示topMiniProgramView, 2,启动的时候会有黑色阴影
+       
         
-        let TopHeaderView = UIView(frame: view.bounds)
-        TopHeaderView.backgroundColor = RGB(r: 69, g: 69, b: 69)
-        view.insertSubview(TopHeaderView, at: 0)
+        let topMiniProgramView = LSTopMiniProgramView(viewModel: viewModel)
+        topMiniProgramView.frame = CGRect(x: 0.0, y: Double(Height_NavBarAndStatusBar), width: Double(kScreenW), height: Double(miniProgramDefaultH))
+//        view.addSubview(topMiniProgramView)
+//                  view.insertSubview(topMiniProgramView, at: 0)
+                view.insertSubview(topMiniProgramView, belowSubview: tableView)
+        
        
     }
     
@@ -69,6 +82,8 @@ class LSChatListController: LSBaseViewController {
                 
             }
         }
+        
+        
     }
     
     
@@ -114,6 +129,10 @@ class LSChatListController: LSBaseViewController {
         
         //菜单展示
         KxMenu.show(in: self.view, from: frame, menuItems: menuArray as Any as! [Any] , withOptions: options)
+    }
+    
+    @objc func respondOfMenu(_ sender: AnyClass) {
+        
     }
 
 }

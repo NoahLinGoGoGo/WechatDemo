@@ -46,9 +46,6 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         
         viewModel?.buttomBarSignal.observeValues { (event) in
             
-            if !self.voiceRecordManager.AudioSessionPermissionIsOpen() {
-                return
-            }
             
             if event == .touchDown {
                 // 开始录音

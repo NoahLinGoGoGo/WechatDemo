@@ -127,6 +127,8 @@
 		CA188D4B212EA95B00E7DF41 /* MyCardPackageIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA188D40212EA95B00E7DF41 /* MyCardPackageIcon@2x.png */; };
 		CA188D4C212EA95B00E7DF41 /* MoreMyFavorites@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA188D41212EA95B00E7DF41 /* MoreMyFavorites@3x.png */; };
 		CA188D4D212EA95B00E7DF41 /* MoreMyAlbum@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA188D42212EA95B00E7DF41 /* MoreMyAlbum@3x.png */; };
+		CA7D126521393FD400F9785D /* LSTopMiniProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D126421393FD400F9785D /* LSTopMiniProgramView.swift */; };
+		CA7D1267213946A000F9785D /* LSTopMiniProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D1266213946A000F9785D /* LSTopMiniProgramCell.swift */; };
 		CA7D8513212D3FAB00E9DC5B /* LSContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8512212D3FAB00E9DC5B /* LSContactListViewModel.swift */; };
 		CA7D8515212D3FCB00E9DC5B /* LSContactListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8514212D3FCB00E9DC5B /* LSContactListCellViewModel.swift */; };
 		CA7D8517212D486300E9DC5B /* LSContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8516212D486300E9DC5B /* LSContactListCell.swift */; };
@@ -271,6 +273,8 @@
 		CA188D40212EA95B00E7DF41 /* MyCardPackageIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MyCardPackageIcon@2x.png"; sourceTree = "<group>"; };
 		CA188D41212EA95B00E7DF41 /* MoreMyFavorites@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MoreMyFavorites@3x.png"; sourceTree = "<group>"; };
 		CA188D42212EA95B00E7DF41 /* MoreMyAlbum@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MoreMyAlbum@3x.png"; sourceTree = "<group>"; };
+		CA7D126421393FD400F9785D /* LSTopMiniProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSTopMiniProgramView.swift; sourceTree = "<group>"; };
+		CA7D1266213946A000F9785D /* LSTopMiniProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSTopMiniProgramCell.swift; sourceTree = "<group>"; };
 		CA7D8512212D3FAB00E9DC5B /* LSContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListViewModel.swift; sourceTree = "<group>"; };
 		CA7D8514212D3FCB00E9DC5B /* LSContactListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListCellViewModel.swift; sourceTree = "<group>"; };
 		CA7D8516212D486300E9DC5B /* LSContactListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListCell.swift; sourceTree = "<group>"; };
@@ -414,6 +418,8 @@
 				A701E72320ECC72F0055A05F /* LSChatVoiceCell.swift */,
 				A703A9C320DCF4A6002E792F /* LSChatBottomBar.swift */,
 				A701E71520EC772E0055A05F /* LSRecordMaskView.swift */,
+				CA7D126421393FD400F9785D /* LSTopMiniProgramView.swift */,
+				CA7D1266213946A000F9785D /* LSTopMiniProgramCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -957,6 +963,7 @@
 				A7FFE7D720E3871100E3C47E /* LSBaseViewController.swift in Sources */,
 				A7F5E32F20CB7CC4008C46BF /* LSGolbal.swift in Sources */,
 				A7F5E32D20CB7293008C46BF /* LSMeController.swift in Sources */,
+				CA7D126521393FD400F9785D /* LSTopMiniProgramView.swift in Sources */,
 				A73043B320E4DF9200BCF5B2 /* LSChatBaseCell.swift in Sources */,
 				A7535A4420DA04F400626AE7 /* LSChatImageCell.swift in Sources */,
 				A7F5E32920CB7236008C46BF /* LSContactListController.swift in Sources */,
@@ -986,6 +993,7 @@
 				A701E72220ECBE4C0055A05F /* LSVoiceRecordManager.swift in Sources */,
 				A76C2ED220EA077100514D6B /* LSChatBaseModel.swift in Sources */,
 				CA188D36212EA71200E7DF41 /* LSMeViewModel.swift in Sources */,
+				CA7D1267213946A000F9785D /* LSTopMiniProgramCell.swift in Sources */,
 				A7F9131B20D3AF1500A2DCC2 /* LSChatTableView.swift in Sources */,
 				A759AD9F20E606F60047B4DC /* LSChatListCellViewModel.swift in Sources */,
 				CA7D8515212D3FCB00E9DC5B /* LSContactListCellViewModel.swift in Sources */,
