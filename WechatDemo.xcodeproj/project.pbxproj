@@ -132,6 +132,7 @@
 		CA7D8513212D3FAB00E9DC5B /* LSContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8512212D3FAB00E9DC5B /* LSContactListViewModel.swift */; };
 		CA7D8515212D3FCB00E9DC5B /* LSContactListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8514212D3FCB00E9DC5B /* LSContactListCellViewModel.swift */; };
 		CA7D8517212D486300E9DC5B /* LSContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8516212D486300E9DC5B /* LSContactListCell.swift */; };
+		CAFDF43A21490A4F00F29F98 /* miniprogram_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAFDF43921490A4F00F29F98 /* miniprogram_open.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -278,6 +279,7 @@
 		CA7D8512212D3FAB00E9DC5B /* LSContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListViewModel.swift; sourceTree = "<group>"; };
 		CA7D8514212D3FCB00E9DC5B /* LSContactListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListCellViewModel.swift; sourceTree = "<group>"; };
 		CA7D8516212D486300E9DC5B /* LSContactListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListCell.swift; sourceTree = "<group>"; };
+		CAFDF43921490A4F00F29F98 /* miniprogram_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = miniprogram_open.wav; sourceTree = "<group>"; };
 		CDDA60332661D267B819B76C /* Pods_WechatDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WechatDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81FFB54613A8AB755739A35 /* Pods-WechatDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -461,6 +463,7 @@
 				A7F5E32520CB7164008C46BF /* Classes */,
 				A7F5E30420CB70EE008C46BF /* Image */,
 				A7F5E2F220CB5AA6008C46BF /* Assets.xcassets */,
+				CAFDF43921490A4F00F29F98 /* miniprogram_open.wav */,
 				A7F5E2F720CB5AA7008C46BF /* Info.plist */,
 			);
 			path = WechatDemo;
@@ -815,6 +818,7 @@
 				CA188D4D212EA95B00E7DF41 /* MoreMyAlbum@3x.png in Resources */,
 				CA188D4A212EA95B00E7DF41 /* MoreMyFavorites@2x.png in Resources */,
 				CA188D47212EA95B00E7DF41 /* MoreMyBankCard@3x.png in Resources */,
+				CAFDF43A21490A4F00F29F98 /* miniprogram_open.wav in Resources */,
 				A7F5E31320CB7120008C46BF /* tabbar_discoverHL@2x.png in Resources */,
 				A7535A3120D9DCF200626AE7 /* ReceiverGreenBG@2x.png in Resources */,
 				CA188D25212E9EEB00E7DF41 /* ff_IconShake@2x.png in Resources */,

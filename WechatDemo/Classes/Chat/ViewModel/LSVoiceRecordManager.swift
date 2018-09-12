@@ -105,6 +105,18 @@ class LSVoiceRecordManager: NSObject {
         }
     }
     
+    //播放本地录音文件
+    func playLocal(path: String) {
+//        print("播放录音\(path)")
+        do {
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            print("录音长度：\(player!.duration)")
+            player!.play()
+        } catch let err {
+            print("播放失败:\(err.localizedDescription)")
+        }
+    }
+    
     
     // 正在播放
     func isPlaying() -> Bool {

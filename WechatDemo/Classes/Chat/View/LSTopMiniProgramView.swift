@@ -25,7 +25,7 @@ class LSTopMiniProgramView: UIView, UICollectionViewDataSource, UICollectionView
         var bottomLabel = UILabel()
         bottomLabel.font = UIFont.systemFont(ofSize: 12.0)
         bottomLabel.textAlignment = .center
-        bottomLabel.textColor = RGB(r: 51, g: 51, b: 51)
+        bottomLabel.textColor = bgColor
         bottomLabel.lineBreakMode = .byWordWrapping
         bottomLabel.numberOfLines = 0
         bottomLabel.text = "已经到底了😀😀"
@@ -78,7 +78,7 @@ class LSTopMiniProgramView: UIView, UICollectionViewDataSource, UICollectionView
     func bindData()  {
     
         viewModel?.chatListScrolltoTopSignal.observeValues { (offsetY, isShow) in
-            print("viewModel.chatListScrolltoTopSignal.observeValues\(offsetY)")
+//            print("viewModel.chatListScrolltoTopSignal.observeValues\(offsetY)")
             if self.collectionView.superview == nil && offsetY != -Height_NavBarAndStatusBar{
                 self.addSubview(self.collectionView)
                 self.backgroundColor = RGB(r: 69, g: 69, b: 69)
@@ -87,14 +87,23 @@ class LSTopMiniProgramView: UIView, UICollectionViewDataSource, UICollectionView
             
              var newframe = self.frame
             if offsetY < 0 && isShow {
-//                newframe.size.height += -offsetY
-//                self.frame = newframe
-//                self.collectionView.center.y = newframe.size.height * 0.5
+                newframe.size.height = -offsetY + miniProgramDefaultH
+                self.frame = newframe
+                print("newframe.size.height\(newframe.size.height)")
+                self.collectionView.center.y = newframe.size.height * 0.5
             }
             
             if offsetY == -Height_NavBarAndStatusBar && !isShow {
                 newframe.size.height = miniProgramDefaultH
                 self.frame = newframe
+            }
+            
+            
+            if self.frame.size.height >= kScreenH * 0.75 {
+                self.bottomLabel.frame = CGRect(x: 0, y: self.frame.size.height - 50, width: kScreenW, height: 30)
+                self.addSubview(self.bottomLabel)
+            } else {
+                self.bottomLabel.removeFromSuperview()
             }
             
         }
