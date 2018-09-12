@@ -29,7 +29,7 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     init(viewModel: LSChatViewModel?) {
         super.init(frame: CGRect(), style: .plain)
         self.viewModel = viewModel
-        viewModel?.loadServeData()
+        viewModel?.loadServerData()
         initTableView()
         bindData()
     }

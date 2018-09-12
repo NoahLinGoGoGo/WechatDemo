@@ -49,7 +49,7 @@ class LSChatListController: LSBaseViewController {
        
         
         let topMiniProgramView = LSTopMiniProgramView(viewModel: viewModel)
-        topMiniProgramView.frame = CGRect(x: 0.0, y: Double(Height_NavBarAndStatusBar), width: Double(kScreenW), height: Double(miniProgramDefaultH))
+        topMiniProgramView.frame = CGRect(x: 0, y: Height_NavBarAndStatusBar, width: kScreenW, height: miniProgramDefaultH)
 //        view.addSubview(topMiniProgramView)
 //                  view.insertSubview(topMiniProgramView, at: 0)
                 view.insertSubview(topMiniProgramView, belowSubview: tableView)

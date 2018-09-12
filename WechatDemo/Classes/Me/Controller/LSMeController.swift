@@ -39,7 +39,7 @@ class LSMeController: UITableViewController {
     
     func bindData()  {
         
-        viewModel.loadServeData()
+        viewModel.loadServerData()
         viewModel.loadDataAction?.events.observe({ (event) in
             print(self.viewModel.dataArray)
             self.tableView.reloadData()

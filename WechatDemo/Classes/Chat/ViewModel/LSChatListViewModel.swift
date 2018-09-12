@@ -13,15 +13,21 @@ import Result
 
 class LSChatListViewModel: LSBaseReqViewModel {
     
-    
+    var miniProgramDataAction: Action<(), Array<LSChatListCellViewModel>, NoError>?
     var dataArray: Array<LSChatListCellViewModel> = Array()
     let (chatListCellClickSignal , observerGesture) = Signal<LSChatListCellViewModel?, NoError>.pipe()
-    let (chatListScrolltoTopSignal , observerMiniProgram) = Signal<CGFloat, NoError>.pipe()
+    let (chatListScrolltoTopSignal , observerMiniProgram) = Signal<(CGFloat,Bool), NoError>.pipe()
     
     var messages = ["这周末有空吗","你好","据最近消息称，布基纳法索已经在昨日与台湾当局断交","好的呀","据说这是最新的iPhone X","你好","三星与中兴和解","WWDC2018盛大开幕","在吗","你好","美国与中兴达成和解","🐔鸡","最近怎么样","在干嘛"]
     let names = ["微风细雨","百度CEO李彦宏","爸爸","弟弟","迈阿密","科比","大大大","嘿嘿嘿","花非花","起个名字好难","强迫症患者","真TM无聊的一批","来呀，造作啊","好呀呀呀","我是一只🐖","我还是只单身🐶","我是猪脚","我是男猪脚","童话里没有男猪脚","哈哈哈哈","王者","财哥","美女主管","僚机"]
     
     var totalUnReadCount: Int  = 0
+    
+    
+    override init() {
+        super.init()
+        miniProgramDataAction = Action.init(execute: getMiniProgramArray)
+    }
     
     func nowTime() -> String {
         let date = NSDate()
@@ -52,6 +58,28 @@ class LSChatListViewModel: LSBaseReqViewModel {
     }
     
     
+    func getMiniProgramArray() -> SignalProducer<Array<LSChatListCellViewModel>, NoError> {
+        
+        return SignalProducer<Array<LSChatListCellViewModel>, NoError>.init { (observer, _) in
+            
+            self.request.GET(url: Host, paras: nil, success: { (request, response) in
+                
+                if let response = response {
+                    
+                    observer.send(value: self.miniArray())
+                    observer.sendCompleted()
+                }
+                
+            }, failure: { (request, error) in
+                
+                observer.sendCompleted()
+            })
+            
+        }
+    }
+    
+    
+    
     func WebArray() -> Array<LSChatListCellViewModel> {
         
         var arr: Array<LSChatListCellViewModel> = []
@@ -76,5 +104,19 @@ class LSChatListViewModel: LSBaseReqViewModel {
         return arr
     }
     
+    
+    func miniArray() -> Array<LSChatListCellViewModel> {
+        
+        var arr: Array<LSChatListCellViewModel> = []
+        for _ in 0...11 {
+            
+            let data =  LSChatListCellViewModel()
+            data.name = randomObject(array: names)
+            data.icon = String.init(format: "icon%d.jpg", Int(arc4random_uniform(UInt32(names.count))) % 5)
+            arr.append(data)
+        }
+        
+        return arr
+    }
 
 }

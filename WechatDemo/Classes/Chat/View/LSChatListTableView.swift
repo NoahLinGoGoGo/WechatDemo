@@ -15,17 +15,18 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     
     //MARK:- Property
     var viewModel: LSChatListViewModel?
-    let greyView = UIView()
+    let blankMaskView = UIView()
     var bar: UISearchBar?
     var miniProgramViewIsShow = false
     var tableViewOriginY: CGFloat? = nil
     var tableViewOriginH: CGFloat? = nil
+    var tableViewScrollY: CGFloat = -Height_NavBarAndStatusBar
     
     init(viewModel: LSChatListViewModel, bar: UISearchBar?) {
         super.init(frame: CGRect(), style: .plain)
         self.viewModel = viewModel
         self.bar = bar
-        viewModel.loadServeData()
+        viewModel.loadServerData()
         bindData()
         initTableView()
         //        addTopHeaderView()
@@ -43,17 +44,30 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         separatorStyle = .none
         showsVerticalScrollIndicator = false
         backgroundColor = UIColor.clear
+        
+        //        let pan = UIPanGestureRecognizer(target: self, action: #selector(panTableView))
+        //        addGestureRecognizer(pan)
     }
     
     
     func bindData()  {
         
+        
+        
         viewModel?.loadDataAction?.events.observe({ (event) in
             self.updateMainView()
         })
         
-        
-        
+        viewModel?.chatListCellClickSignal.observeValues { (model) in
+            if model != nil {
+                var rect = self.frame
+                rect.origin.y = self.tableViewOriginY!
+                rect.size.height = self.tableViewOriginH!
+                self.frame = rect
+                self.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .top, animated: true)
+                self.miniProgramViewIsShow = false
+            }
+        }
         
     }
     
@@ -62,8 +76,8 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         if let count = viewModel?.dataArray.count {
             if 0 >= count {
                 
-                greyView.frame = self.bounds
-                greyView.backgroundColor = RGB(r: 244, g: 244, b: 244)
+                blankMaskView.frame = self.bounds
+                blankMaskView.backgroundColor = RGB(r: 244, g: 244, b: 244)
                 
                 let refreshBtn = UIButton(type: .custom);
                 refreshBtn.setTitle("点击只刷新一次", for: .normal)
@@ -75,13 +89,32 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
                 refreshBtn.layer.masksToBounds = true
                 refreshBtn.layer.borderColor = RGB(r: 214, g: 214, b: 214).cgColor
                 refreshBtn.layer.borderWidth = 1
-                greyView.addSubview(refreshBtn)
-                addSubview(greyView)
+                blankMaskView.addSubview(refreshBtn)
+                addSubview(blankMaskView)
             } else {
                 self.reloadData()
             }
         }
     }
+    
+    
+    @objc func refreshBtnClick (_ button: UIButton) {
+        button.removeFromSuperview()
+        blankMaskView.removeFromSuperview()
+        viewModel?.loadServerData()
+        self.reloadData()
+    }
+    
+    
+    //    @objc func panTableView(gesture: UIGestureRecognizer) {
+    //        switch gesture.state {
+    //        case .ended:
+    //            print("end")
+    //        default:
+    //            print("default")
+    //        }
+    //
+    //    }
     
     //MARK:- UITableView DataSource & Delegate
     
@@ -101,6 +134,7 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
                 cell = UITableViewCell.init(style: .default, reuseIdentifier: identifier)
             }
             if let bar = bar {
+                bar.frame = (cell?.contentView.bounds)!
                 cell?.contentView.addSubview(bar)
             }
             return cell!
@@ -127,21 +161,15 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if 0 == indexPath.row {
-            return 44.0
+            return 54.0
         }
         return 65.0;
     }
     
     
-    @objc func refreshBtnClick (_ button: UIButton) {
-        button.removeFromSuperview()
-        greyView.removeFromSuperview()
-        viewModel?.loadServeData()
-        self.reloadData()
-    }
-    
+    //MARK:- UITableView DataSource & Delegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-print("scrollViewDidScroll")
+        //print("scrollViewDidScrollscrollViewDidScrollscrollViewDidScroll")
         // rac传递偏移量给viewmodel
         let offsetY = scrollView.contentOffset.y
         if tableViewOriginY == nil {
@@ -150,29 +178,35 @@ print("scrollViewDidScroll")
         if tableViewOriginH == nil {
             tableViewOriginH = self.frame.size.height
         }
-
-        print("scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
-        //        print("self.frame.origin.y: \(tableViewOriginY ?? 0)")
-        //        print("self.frame.size.height: \(tableViewOriginH ?? 0)")
         
-        if offsetY < -64 && offsetY > -miniProgramDefaultH * 0.5{
-           
-             viewModel?.observerMiniProgram.send(value: offsetY)
+        print("scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
+        print("tableViewOriginY: \(tableViewOriginY ?? -1)")
+        print("self.frame.origin.y: \(self.frame.origin.y)")
+        
+        
+        // 动画 + 加载数组
+        if offsetY < -64 && offsetY > -miniProgramDefaultH * 0.5 {
             
-            // 判断用户是否大力拖拽，只有显示的数据是第一行的时候才让显示miniProgramView
-        } else if (offsetY < -miniProgramDefaultH * 0.5 && !miniProgramViewIsShow){
-
+            if self.frame.origin.y < miniProgramDefaultH {
+                viewModel?.miniProgramDataAction?.apply().start()
+            }
+            viewModel?.observerMiniProgram.send(value: (offsetY,false))
+            // 手指向下移动的时候，用户是否大力拖拽，只有显示的数据是第一行的时候才让显示miniProgramView
+            // 去掉bounds效果(不让弹回)   +   播放音效
+        } else if (offsetY < -miniProgramDefaultH * 0.5 && !miniProgramViewIsShow && tableViewScrollY <= -Height_NavBarAndStatusBar  && tableViewScrollY >= -Height_NavBarAndStatusBar - 30){
+            
             UIView.animate(withDuration: 0.2) {
                 var rect = self.frame
-                rect.origin.y = rect.origin.y + miniProgramDefaultH
-                rect.size.height = rect.size.height - miniProgramDefaultH
+                rect.origin.y += miniProgramDefaultH + Height_NavBarAndStatusBar
+                rect.size.height -= miniProgramDefaultH
                 self.frame = rect
             }
             miniProgramViewIsShow = true
-             viewModel?.observerMiniProgram.send(value: offsetY)
-            
-            // 判断用户是否大力拖拽，显示的数据是第一行
-        } else if (offsetY > 50 && miniProgramViewIsShow){
+            viewModel?.observerMiniProgram.send(value: (offsetY,true))
+            /*
+             手指向上移动的时候，判断用户是否大力拖拽，这时候显示的数据应该是是第一行，隐藏miniProgramView   self.frame.origin.y <= miniProgramDefaultH * 0.9， 因为微信这里没有处理，所以暂时没有做
+             */
+        } else if (offsetY > 1 && miniProgramViewIsShow){
             
             UIView.animate(withDuration: 0.2) {
                 var rect = self.frame
@@ -183,16 +217,19 @@ print("scrollViewDidScroll")
             }
             
             miniProgramViewIsShow = false
-            viewModel?.observerMiniProgram.send(value: offsetY)
-            
+            viewModel?.observerMiniProgram.send(value: (offsetY,false))
+        } else {
+            viewModel?.observerMiniProgram.send(value: (offsetY,false))
         }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("scrollViewDidEndDecelerating")
+        //    print("scrollViewDidEndDeceleratingscrollViewDidEndDeceleratingscrollViewDidEndDecelerating")
+        //        print("scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
+        //        print("tableViewOriginY: \(tableViewOriginY ?? -1)")
+        //        print("self.frame.origin.y: \(self.frame.origin.y)")
+        tableViewScrollY = scrollView.contentOffset.y
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        print("scrollViewDidEndDragging")
-    }
+    
 }

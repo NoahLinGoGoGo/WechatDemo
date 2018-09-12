@@ -29,8 +29,7 @@ let chatListClickNotification = "chatListClickNotification"
 
 
 
-// 小程序header
-let miniProgramDefaultH: CGFloat = 250.0
+let miniProgramDefaultH: CGFloat = 200.0
 
 public let LSFontSize16 = UIFont.systemFont(ofSize: 16.0)
 

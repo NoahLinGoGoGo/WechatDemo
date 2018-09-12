@@ -46,7 +46,7 @@ class LSContactListController: LSBaseViewController,UITableViewDataSource,UITabl
 //        self.letterResultArr = [BMChineseSort sortObjectArray:array Key:@"name"];
         
 
-        viewModel.loadServeData()
+        viewModel.loadServerData()
         
         viewModel.loadDataAction?.events.observe({ (event) in
             
