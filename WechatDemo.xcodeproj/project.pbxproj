@@ -132,6 +132,7 @@
 		CA7D8513212D3FAB00E9DC5B /* LSContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8512212D3FAB00E9DC5B /* LSContactListViewModel.swift */; };
 		CA7D8515212D3FCB00E9DC5B /* LSContactListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8514212D3FCB00E9DC5B /* LSContactListCellViewModel.swift */; };
 		CA7D8517212D486300E9DC5B /* LSContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8516212D486300E9DC5B /* LSContactListCell.swift */; };
+		CAA2D854214F9F3800F74A21 /* UITabBar+traitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA2D853214F9F3800F74A21 /* UITabBar+traitCollection.swift */; };
 		CAFDF43A21490A4F00F29F98 /* miniprogram_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAFDF43921490A4F00F29F98 /* miniprogram_open.wav */; };
 /* End PBXBuildFile section */
 
@@ -279,6 +280,7 @@
 		CA7D8512212D3FAB00E9DC5B /* LSContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListViewModel.swift; sourceTree = "<group>"; };
 		CA7D8514212D3FCB00E9DC5B /* LSContactListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListCellViewModel.swift; sourceTree = "<group>"; };
 		CA7D8516212D486300E9DC5B /* LSContactListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListCell.swift; sourceTree = "<group>"; };
+		CAA2D853214F9F3800F74A21 /* UITabBar+traitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+traitCollection.swift"; sourceTree = "<group>"; };
 		CAFDF43921490A4F00F29F98 /* miniprogram_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = miniprogram_open.wav; sourceTree = "<group>"; };
 		CDDA60332661D267B819B76C /* Pods_WechatDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WechatDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81FFB54613A8AB755739A35 /* Pods-WechatDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			children = (
 				A7535A3920D9F7E400626AE7 /* WechatDemo-Bridging-Header.h */,
 				A721520420E247A8006053C7 /* UIView+Border.swift */,
+				CAA2D853214F9F3800F74A21 /* UITabBar+traitCollection.swift */,
 				A759AD9C20E5D82A0047B4DC /* LSRequest.swift */,
 			);
 			path = Helper;
@@ -1000,6 +1003,7 @@
 				CA7D1267213946A000F9785D /* LSTopMiniProgramCell.swift in Sources */,
 				A7F9131B20D3AF1500A2DCC2 /* LSChatTableView.swift in Sources */,
 				A759AD9F20E606F60047B4DC /* LSChatListCellViewModel.swift in Sources */,
+				CAA2D854214F9F3800F74A21 /* UITabBar+traitCollection.swift in Sources */,
 				CA7D8515212D3FCB00E9DC5B /* LSContactListCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
