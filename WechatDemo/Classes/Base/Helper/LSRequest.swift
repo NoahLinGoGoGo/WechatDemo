@@ -61,7 +61,6 @@ class LSRequest: NSObject {
     
     
     public func dataToDictionary(data:Data) ->Dictionary<String,Any>?{
-        
         do{
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             let dic = json as! Dictionary<String,Any>

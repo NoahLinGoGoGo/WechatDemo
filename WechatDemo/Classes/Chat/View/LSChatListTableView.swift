@@ -53,8 +53,6 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     
     func bindData()  {
         
-        
-        
         viewModel?.loadDataAction?.events.observe({ (event) in
             self.updateMainView()
         })

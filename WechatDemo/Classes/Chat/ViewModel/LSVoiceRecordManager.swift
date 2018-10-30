@@ -76,6 +76,13 @@ class LSVoiceRecordManager: NSObject {
     
     //结束录音
     func stopRecord(path: String) {
+        let session = AVAudioSession.sharedInstance()
+        //设置session类型
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        } catch let err{
+            print("设置类型失败:\(err.localizedDescription)")
+        }
         let path = file_path?.appending("/\(path).wav")
         print("结束录音\(path!)")
         if let recorder = self.recorder {

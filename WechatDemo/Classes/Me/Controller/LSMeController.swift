@@ -22,7 +22,6 @@ class LSMeController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initUI()
         bindData()
     }
