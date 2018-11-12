@@ -1130,7 +1130,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/WechatDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ddd.WechatDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linshengqi.WechatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WechatDemo/Classes/Base/Helper/WechatDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1151,7 +1151,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/WechatDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ddd.WechatDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.linshengqi.WechatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WechatDemo/Classes/Base/Helper/WechatDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

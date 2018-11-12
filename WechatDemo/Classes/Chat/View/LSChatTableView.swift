@@ -25,16 +25,17 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     var voiceViewModelId: String?
     
     
-    
+    //MARK:- Life Cycle Function
     init(viewModel: LSChatViewModel?) {
         super.init(frame: CGRect(), style: .plain)
         self.viewModel = viewModel
         viewModel?.loadServerData()
         initTableView()
         bindData()
+    
     }
     
-     //MARK:- Life Cycle Function
+    
     func bindData() {
         
         viewModel?.loadDataAction?.events.observe({ (event) in
@@ -44,7 +45,7 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
             self.reloadData()
         })
         
-        viewModel?.buttomBarSignal.observeValues { (event) in
+        viewModel?.bottomBarVoiceBtnClickSignal.observeValues { (event) in
             
             
             if event == .touchDown {
@@ -91,11 +92,21 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
             
         }
         
-        viewModel?.bgClearBtnClickSignal.observeValues({ (cellViewModel) in
+        viewModel?.bottomBarBgClearCoverBtnClickSignal.observeValues({ (cellViewModel) in
             
             if cellViewModel.msgType == .voiceMsg {
                 self.voiceRecordManager.play(path: cellViewModel.id!)
             }
+        })
+        
+        
+        viewModel?.bottomBarTextViewDidClickSendSignal.observeValues({ (inputText) in
+            let textViewModel =  LSChatCellViewModel(msgType: .textMsg, isFromSelf: true)
+            textViewModel.textContent = inputText
+            self.dataArray?.append(textViewModel)
+            self.caculateRowHeight()
+            self.reloadData()
+            self.scrollsToBottomAnimated()
         })
         
     }
@@ -197,6 +208,7 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         RowHeightArray.removeAll()
         for chatViewModel in dataArray! {
             if chatViewModel.msgType == .textMsg {
+                
                 let contentTextHeight  = chatViewModel.textContent.boundingRect(with: CGSize.init(width: Double(kScreenW * 0.6 + 30.0), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : LSFontSize16] ,context: nil).size.height + 8.0
                 RowHeightArray.append(contentTextHeight + 40.0)
                 
@@ -210,13 +222,15 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    
+    // 默认滚动到最后一条消息
     func scrollsToBottomAnimated() {
         
         UIView.animate(withDuration: 0.5) {
-            self.scrollToRow(at: IndexPath.init(row: self.dataArray!.count - 1, section: 0), at: .bottom, animated: false)
+            if let count = self.dataArray?.count {
+                self.scrollToRow(at: IndexPath.init(row: count - 1, section: 0), at: .bottom, animated: false)
+            }
+            
         }
-
     }
     
     
@@ -224,7 +238,7 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     func startTimer()  {
         voiceMsgSecondLength = 0
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(self.voiceLength), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .defaultRunLoopMode)
+        RunLoop.main.add(timer!, forMode: .commonModes)
      
     }
     

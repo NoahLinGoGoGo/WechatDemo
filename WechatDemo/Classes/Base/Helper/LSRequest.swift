@@ -19,14 +19,14 @@ class LSRequest: NSObject {
             
             switch response.result {
             case .success:
-                print("success\(response.result.value ?? Data())")
+//                print("success\(response.result.value ?? Data())")
                 if let data = response.result.value {
                   let responseStr = String.init(data: data, encoding: String.Encoding.utf8)
                     success(self, responseStr)
                 }
                 
             case .failure:
-                print("failure\(response.error ?? "nil" as! Error)")
+//                print("failure\(response.error ?? "nil" as! Error)")
                 if let error = response.error {
                      failure(self,error)
                 }
@@ -43,14 +43,14 @@ class LSRequest: NSObject {
             
             switch response.result {
             case .success:
-                print("success\(response.result.value ?? Data())")
+//                print("success\(response.result.value ?? Data())")
                 if let data = response.result.value {
                     let responseStr = String.init(data: data, encoding: String.Encoding.utf8)
                     success(self, responseStr)
                 }
                 
             case .failure:
-                print("failure\(response.error ?? "nil" as! Error)")
+//                print("failure\(response.error ?? "nil" as! Error)")
                 if let error = response.error {
                     failure(self,error)
                 }

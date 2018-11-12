@@ -27,11 +27,11 @@ class LSChatViewModel: LSBaseReqViewModel {
     var dataArray: Array<LSChatCellViewModel> = Array()
     var userViewModel: LSChatListCellViewModel?
     
-    let (chatListClickSignal , observerCellClick) = Signal<LSChatListViewModel, NoError>.pipe()
-    let (buttomBarSignal , observerEvent) = Signal<RecordBtnEvent, NoError>.pipe()
-    let (bgClearBtnClickSignal , observerbgClearBtn) = Signal<LSChatCellViewModel, NoError>.pipe()
-
-    
+//    let (chatListClickSignal , observerCellClick) = Signal<LSChatListViewModel, NoError>.pipe()
+    let (bottomBarVoiceBtnClickSignal , observerBottomBarVoiceBtnClickEvent) = Signal<RecordBtnEvent, NoError>.pipe()
+    let (bottomBarBgClearCoverBtnClickSignal , observerBottomBarBgClearCoverBtnClick) = Signal<LSChatCellViewModel, NoError>.pipe()
+    let (bottomBarTextViewIsEditingSignal , observerBottomBarTextViewIsEditing) = Signal<CGFloat, NoError>.pipe()
+    let (bottomBarTextViewDidClickSendSignal , observerBottomBarTextViewDidClickSend) = Signal<String, NoError>.pipe()
     
     override func getChatArray() -> SignalProducer<Any, NoError> {
         

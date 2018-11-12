@@ -19,7 +19,7 @@ class LSBaseReqViewModel: NSObject {
     
     override init() {
         super.init()
-        
+       
         loadDataAction = Action.init(execute: getChatArray)
     }
     

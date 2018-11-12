@@ -21,14 +21,14 @@ class LSChatListController: LSBaseViewController {
         super.viewDidLoad()
         
         bindData()
-
+        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-      
+        
     }
     
     
@@ -40,35 +40,27 @@ class LSChatListController: LSBaseViewController {
         
         let tableView = LSChatListTableView(viewModel: viewModel, bar: bar)
         tableView.frame = view.bounds
-//        tableView.tableHeaderView = bar
         view.addSubview(tableView)
         
-        // 自定义类topMiniProgramView
         // viewModel 中处理topMiniProgramView数据与交互
-        // 问题点：设置了tableHeaderView后下拉不会显示topMiniProgramView, 2,启动的时候会有黑色阴影
-       
-        
         let topMiniProgramView = LSTopMiniProgramView(viewModel: viewModel)
         topMiniProgramView.frame = CGRect(x: 0, y: Height_NavBarAndStatusBar, width: kScreenW, height: miniProgramDefaultH)
-//        view.addSubview(topMiniProgramView)
-//                  view.insertSubview(topMiniProgramView, at: 0)
-                view.insertSubview(topMiniProgramView, belowSubview: tableView)
+        view.insertSubview(topMiniProgramView, belowSubview: tableView)
         
-       
+        
     }
     
     
     func bindData()  {
         
-        
         viewModel.loadDataAction?.events.observe({ (event) in
             
-             self.updateTabbarItemBadgeNumber(self.viewModel.totalUnReadCount)
+            self.updateTabbarItemBadgeNumber(self.viewModel.totalUnReadCount)
         })
         
         viewModel.chatListCellClickSignal.observeValues { (model) in
             if model != nil &&  (self.navigationController?.childViewControllers.count)! > 0 {
-        
+                
                 for (_, element) in (self.navigationController?.childViewControllers.enumerated())! {
                     if element is LSChatController {
                         return
@@ -77,8 +69,8 @@ class LSChatListController: LSBaseViewController {
                 
                 let chatVC = LSChatController(viewModel: model)
                 self.navigationController?.pushViewController(chatVC, animated: true)
-                    self.viewModel.totalUnReadCount -= model!.unReadCout
-                    self.updateTabbarItemBadgeNumber(self.viewModel.totalUnReadCount)
+                self.viewModel.totalUnReadCount -= model!.unReadCout
+                self.updateTabbarItemBadgeNumber(self.viewModel.totalUnReadCount)
                 
             }
         }
@@ -102,10 +94,10 @@ class LSChatListController: LSBaseViewController {
     @objc public func showChatListMenu(sender: UIBarButtonItem) {
         
         //配置零：内容配置
-        let menuArray = [KxMenuItem.init("发起群聊", image: UIImage(named: "setup_ground"), target: self, action: Selector(("respondOfMenu:"))),
-                         KxMenuItem.init("添加朋友", image: UIImage(named: "setup_ground"), target: self, action: Selector(("respondOfMenu:"))),
-                         KxMenuItem.init("扫一扫", image: UIImage(named: "setup_ground"), target: self, action: Selector(("respondOfMenu:"))),
-                         KxMenuItem.init("收付款", image: UIImage(named: "setup_ground"), target: self, action: Selector(("respondOfMenu:")))]
+        let menuArray = [KxMenuItem.init("发起群聊", image: UIImage(named: "setup_ground"), target: self, action: #selector(LSChatListController.respondOfMenu(_:))),
+                         KxMenuItem.init("添加朋友", image: UIImage(named: "setup_ground"), target: self, action: #selector(LSChatListController.respondOfMenu(_:))),
+                         KxMenuItem.init("扫一扫", image: UIImage(named: "setup_ground"), target: self, action: #selector(LSChatListController.respondOfMenu(_:))),
+                         KxMenuItem.init("收付款", image: UIImage(named: "setup_ground"), target: self, action: #selector(LSChatListController.respondOfMenu(_:)))]
         
         //配置一：基础配置
         KxMenu.setTitleFont(UIFont(name: "HelveticaNeue", size: 15))
@@ -128,11 +120,11 @@ class LSChatListController: LSBaseViewController {
         let frame = CGRect(x: kScreenW - 30, y: 70, width: 0, height: 0)
         
         //菜单展示
-        KxMenu.show(in: self.view, from: frame, menuItems: menuArray as Any as! [Any] , withOptions: options)
+        KxMenu.show(in: self.view, from: frame, menuItems: menuArray as Any as? [Any] , withOptions: options)
     }
     
     @objc func respondOfMenu(_ sender: AnyClass) {
         
     }
-
+    
 }

@@ -11,18 +11,28 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 
-class LSChatBottomBar: UIView, UITextFieldDelegate {
+class LSChatBottomBar: UIView, UITextViewDelegate {
     
-    
+    let margin: CGFloat = 10.0
+    let img = UIImage(named:"002")
+    let normalimage = UIImage(named:"chatBar_recordBg")?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 10)
+    let selectImage = UIImage(named:"chatBar_recordSelectedBg")?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 10)
+    var textViewW: CGFloat = 0.0
+    var textViewH: CGFloat = 0.0
     var viewModel: LSChatViewModel?
     var voiceBtn = UIButton(type: .custom)
     var faceBtn = UIButton(type: .custom)
     var plusBtn = UIButton(type: .custom)
-    var textField = UITextField()
+    var textView = UITextView()
     var isVoiceState = false
     var voiceRecordManager = LSVoiceRecordManager()
-    let normalimage = UIImage(named:"chatBar_recordBg")?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 10)
-    let selectImage = UIImage(named:"chatBar_recordSelectedBg")?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 10)
+    override var frame: CGRect{
+        didSet{
+            addTopBorder(color: RGB(r: 121, g: 121, b: 121), borderWidth: 0.5)
+            layoutSubviews()
+        }
+    }
+    
     
     init(viewModel: LSChatViewModel?) {
         super.init(frame: CGRect.init())
@@ -52,13 +62,13 @@ class LSChatBottomBar: UIView, UITextFieldDelegate {
         
         backgroundColor = bgColor
         
-        
-        let margin: CGFloat = 5.0
-        let img = UIImage(named:"002")
-        addButton(button: voiceBtn, image: UIImage(named:"002"),buttonX: margin)
-        addButton(button: plusBtn, image: UIImage(named:"001"),buttonX: kScreenW - (img?.size.width)! - margin)
-        addButton(button: faceBtn, image: UIImage(named:"009"),buttonX: kScreenW - 2 * ((img?.size.width)! + margin))
-        
+        voiceBtn.setBackgroundImage(UIImage(named:"002"), for: .normal)
+        faceBtn.setBackgroundImage(UIImage(named:"009"), for: .normal)
+        plusBtn.setBackgroundImage(UIImage(named:"001"), for: .normal)
+        addSubview(voiceBtn)
+        addSubview(faceBtn)
+        addSubview(plusBtn)
+
         voiceBtn.reactive.controlEvents(.touchUpInside).observe { (signal) in
             print("voiceBtnClick")
             self.voiceBtnClick()
@@ -71,15 +81,38 @@ class LSChatBottomBar: UIView, UITextFieldDelegate {
         }
         
         
-        let textFieldW = kScreenW - (3 * (img?.size.width)!) - (5 * margin)
-        textField.frame = CGRect(x: (img?.size.width)! + 2 * margin, y: margin * 1.5 , width: textFieldW, height: (img?.size.height)! + margin)
-        textField.borderStyle = .roundedRect
-        textField.returnKeyType = .send
-        textField.delegate = self
-        textField.backgroundColor = UIColor.white
-        addSubview(textField)
+        textView.returnKeyType = .send
+        textView.delegate = self
+        textView.layer.cornerRadius = 5.0
+        textView.layer.masksToBounds = true
+        textView.font = LSFontSize16
+        textView.backgroundColor = UIColor.white
+        textView.enablesReturnKeyAutomatically = true
+        addSubview(textView)
         
-
+        
+         textViewW = kScreenW - (3 * (img?.size.width)!) - (5 * margin)
+         textViewH = (img?.size.height)! + margin * 0.5
+         let textViewMaxHeight: CGFloat = 80.0
+        textView.reactive.continuousAttributedTextValues.observeValues { (text) in
+            if let length = text?.length {
+                if length <= 0 {
+                    return
+                }
+            }
+            
+            let contentTextH  = text?.boundingRect(with: CGSize.init(width: self.textViewW-20, height: CGFloat(Double(MAXFLOAT))),options: NSStringDrawingOptions.usesLineFragmentOrigin ,context: nil).size.height
+            if let contentTextH = contentTextH {
+                if contentTextH > textViewMaxHeight{
+                    self.textViewH = textViewMaxHeight
+                } else if contentTextH < (self.img?.size.height)! + self.margin * 0.5 {
+                    self.textViewH = (self.img?.size.height)! + self.margin * 0.5
+                }
+                self.viewModel?.observerBottomBarTextViewIsEditing.send(value: self.textViewH + self.margin)
+            }
+            
+        }
+        
         
     }
     
@@ -88,46 +121,40 @@ class LSChatBottomBar: UIView, UITextFieldDelegate {
         
     }
     
-    
-    override var frame: CGRect{
-        didSet{
-            addTopBorder(color: RGB(r: 121, g: 121, b: 121), borderWidth: 0.5)
-        }
-    }
-    
-    func addButton(button: UIButton, image: UIImage?, buttonX: CGFloat)  {
-        let margin: CGFloat = 10.0
-        let img = UIImage(named:"002")
-        button.setBackgroundImage(image, for: .normal)
-        button.frame = CGRect(x: buttonX, y: margin, width: (img?.size.width)!, height: (img?.size.height)!)
-        addSubview(button)
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
+        voiceBtn.frame = CGRect(x: margin, y: self.frame.size.height - (margin + (img?.size.height)!), width: (img?.size.width)!, height: (img?.size.height)!)
+        faceBtn.frame = CGRect(x: kScreenW - 2 * ((img?.size.width)! + margin), y: self.frame.size.height - (margin + (img?.size.height)!), width: (img?.size.width)!, height: (img?.size.height)!)
+        plusBtn.frame = CGRect(x: kScreenW - (img?.size.width)! - margin, y: self.frame.size.height - (margin + (img?.size.height)!), width: (img?.size.width)!, height: (img?.size.height)!)
+        textView.frame = CGRect(x: (img?.size.width)! + 2 * margin, y: (self.frame.size.height - textViewH) * 0.5, width: textViewW, height: textViewH)
+
+
     }
-    
     
     @objc fileprivate func recordBtnTouchDown(_ button : UIButton) {
         recordButtonState(state: .touchDown)
-        viewModel?.observerEvent.send(value: .touchDown)
+        viewModel?.observerBottomBarVoiceBtnClickEvent.send(value: .touchDown)
     }
     
     @objc fileprivate func recordBtnTouchUpOutside(_ button : UIButton) {
         recordButtonState(state: .touchUpInside)
-        viewModel?.observerEvent.send(value: .touchUpOutside)
+        viewModel?.observerBottomBarVoiceBtnClickEvent.send(value: .touchUpOutside)
     }
     
     @objc fileprivate func recordBtnTouchUpInside(_ button : UIButton) {
         recordButtonState(state: .touchUpInside)
-        viewModel?.observerEvent.send(value: .touchUpInside)
+        viewModel?.observerBottomBarVoiceBtnClickEvent.send(value: .touchUpInside)
     }
     
     @objc fileprivate func recordBtnTouchDragExit(_ button : UIButton) {
         recordButtonState(state: .touchDragExit)
-        viewModel?.observerEvent.send(value: .touchDragExit)
+        viewModel?.observerBottomBarVoiceBtnClickEvent.send(value: .touchDragExit)
     }
     
     @objc fileprivate func recordBtnTouchDragEnter(_ button : UIButton) {
         recordButtonState(state: .touchDragEnter)
-        viewModel?.observerEvent.send(value: .touchDragEnter)
+        viewModel?.observerBottomBarVoiceBtnClickEvent.send(value: .touchDragEnter)
     }
     
     func recordButtonState(state: RecordBtnEvent){
@@ -155,39 +182,42 @@ class LSChatBottomBar: UIView, UITextFieldDelegate {
         
         if isVoiceState {
             voiceBtn.setBackgroundImage(UIImage(named:"003"), for: .normal)
-            recordBtn.frame = textField.frame
+            recordBtn.frame = textView.frame
             addSubview(recordBtn)
-            /** 如果给textField 添加多个手势会有手势失效 iOS Touch: Failed to receive system gesture state notification before next touch
-             let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapClick(_:)))
-             let longPress = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(_:)))
+            /** 如果给textView 添加多个手势会有手势失效 iOS Touch: Failed to receive system gesture state notification before next touch
              */
             
         } else {
             voiceBtn.setBackgroundImage(UIImage(named:"002"), for: .normal)
-            textField.textAlignment = .left
-            textField.becomeFirstResponder()
+            textView.textAlignment = .left
+            textView.becomeFirstResponder()
             recordBtn.removeFromSuperview()
         }
         
     }
     
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         if isVoiceState {
             return false
         }
         return true
     }
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(textField.text)
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n"{
+            let inputText = textView.text.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: " ", with: "")
+            if inputText.count > 0 {
+               viewModel?.observerBottomBarTextViewDidClickSend.send(value: inputText)
+                textView.text = nil
+                textView.becomeFirstResponder()
+            } else {
+                textView.resignFirstResponder()
+               let alert =  UIAlertView.init(title: "不能发送空白消息", message: nil, delegate: nil, cancelButtonTitle: "确定")
+                alert.show()
+            }
+            
+        }
         return true
     }
-    
-    
-    
-    
-    
 }

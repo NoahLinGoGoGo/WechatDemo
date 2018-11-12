@@ -79,7 +79,7 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
                 blankMaskView.backgroundColor = RGB(r: 244, g: 244, b: 244)
                 
                 let refreshBtn = UIButton(type: .custom);
-                refreshBtn.setTitle("点击只刷新一次", for: .normal)
+                refreshBtn.setTitle("点击刷新", for: .normal)
                 refreshBtn.setTitleColor(RGB(r: 214, g: 214, b: 214), for: .normal)
                 refreshBtn.addTarget(self, action: #selector(self.refreshBtnClick(_:)), for: .touchUpInside)
                 refreshBtn.frame = CGRect(x: 0, y: 0, width: 200, height: 45)

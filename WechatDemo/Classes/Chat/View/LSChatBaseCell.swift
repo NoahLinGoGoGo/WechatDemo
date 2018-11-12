@@ -94,7 +94,7 @@ class LSChatBaseCell: UITableViewCell {
     
     
     @objc func bgClearBtnClick(_ button: UIButton){
-        viewModel?.observerbgClearBtn.send(value: cellViewModel!)
+        viewModel?.observerBottomBarBgClearCoverBtnClick.send(value: cellViewModel!)
     }
     
     

@@ -13,7 +13,10 @@ class LSChatController: UIViewController {
     
     //MARK:- Property
     let viewModel = LSChatViewModel()
-    
+    let bottomBarH: CGFloat = 50.0
+    var bottomBar =  LSChatBottomBar.init(viewModel: nil)
+    var tableView =  LSChatTableView(viewModel: nil)
+
     
     init(viewModel: LSChatListCellViewModel?) {
         super.init(nibName: nil, bundle: nil)
@@ -34,21 +37,19 @@ class LSChatController: UIViewController {
     }
     
     func configureUI() {
+        tableView = LSChatTableView(viewModel: viewModel)
+        tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - bottomBarH)
+        view.addSubview(tableView)
         
-        let toolBarH: CGFloat = 50.0
-       
-        let toolBar = LSChatBottomBar(viewModel: viewModel)
-        toolBar.frame = CGRect(x: 0, y: kScreenH - toolBarH, width: kScreenW, height: toolBarH)
-        view.addSubview(toolBar)
-        
-         let tableView = LSChatTableView(viewModel: viewModel)
-         tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - toolBarH)
-         view.addSubview(tableView)
+        bottomBar = LSChatBottomBar(viewModel: viewModel)
+        bottomBar.frame = CGRect(x: 0, y: kScreenH - bottomBarH, width: kScreenW, height: bottomBarH)
+        view.addSubview(bottomBar)
         
     }
     
     func bindData() {
-        viewModel.bgClearBtnClickSignal.observeValues({ (cellViewModel) in
+        // button , textfield 可以直接动态绑定，不用通过Signal ？
+        viewModel.bottomBarBgClearCoverBtnClickSignal.observeValues({ (cellViewModel) in
             
             if cellViewModel.msgType == .imageMsg {
                 
@@ -63,6 +64,22 @@ class LSChatController: UIViewController {
                 self.present(browser, animated: true, completion: {})
             }
         })
+        
+        
+        viewModel.bottomBarTextViewIsEditingSignal.observeValues { (bottomBarH) in
+            if bottomBarH > self.bottomBarH {
+                self.tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - bottomBarH)
+                self.bottomBar.frame = CGRect(x: 0, y: kScreenH - bottomBarH, width: kScreenW, height: bottomBarH)
+            }
+//            print("contentTextH:\(bottomBarH)self.bottomBar.frame:\(self.bottomBar.frame)")
+        }
+        
+        
+        viewModel.bottomBarTextViewDidClickSendSignal.observeValues({ (inputText) in
+            self.tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - self.bottomBarH)
+            self.bottomBar.frame = CGRect(x: 0, y: kScreenH - self.bottomBarH, width: kScreenW, height: self.bottomBarH)
+        })
+        
     }
     
     override func didReceiveMemoryWarning() {

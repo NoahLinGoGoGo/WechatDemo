@@ -84,8 +84,7 @@ class LSTopMiniProgramView: UIView, UICollectionViewDataSource, UICollectionView
                 self.backgroundColor = RGB(r: 69, g: 69, b: 69)
             }
             
-            
-             var newframe = self.frame
+            var newframe = self.frame
             if offsetY < 0 && isShow {
                 newframe.size.height = -offsetY + miniProgramDefaultH
                 self.frame = newframe

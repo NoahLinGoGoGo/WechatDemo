@@ -56,7 +56,7 @@ class LSChatVoiceCell: LSChatBaseCell {
         }
        
         
-        self.viewModel?.bgClearBtnClickSignal.observeValues({ (viewModel) in
+        self.viewModel?.bottomBarBgClearCoverBtnClickSignal.observeValues({ (viewModel) in
             
             if viewModel.id == self.cellViewModel?.id {
                 self.stopTimer()
@@ -192,7 +192,7 @@ class LSChatVoiceCell: LSChatBaseCell {
         
         startVoiceImageAnimation()
         timer = Timer(timeInterval: 1.0, target: self, selector: #selector(self.voiceLength), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .defaultRunLoopMode)
+        RunLoop.main.add(timer!, forMode: .commonModes)
         
     }
     
