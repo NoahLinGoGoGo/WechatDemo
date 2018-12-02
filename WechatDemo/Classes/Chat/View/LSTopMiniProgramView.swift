@@ -64,6 +64,7 @@ class LSTopMiniProgramView: UIView, UICollectionViewDataSource, UICollectionView
         collectionView.register(LSTopMiniProgramCell.self, forCellWithReuseIdentifier: identifier)
 //        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: sectionHeader, withReuseIdentifier: sectionHeaderIdentifier)
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
     
         
         

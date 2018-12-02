@@ -13,10 +13,10 @@ class LSChatController: UIViewController {
     
     //MARK:- Property
     let viewModel = LSChatViewModel()
-    let bottomBarH: CGFloat = 50.0
+    var bottomBarH: CGFloat = 50.0
     var bottomBar =  LSChatBottomBar.init(viewModel: nil)
     var tableView =  LSChatTableView(viewModel: nil)
-
+    
     
     init(viewModel: LSChatListCellViewModel?) {
         super.init(nibName: nil, bundle: nil)
@@ -66,16 +66,19 @@ class LSChatController: UIViewController {
         })
         
         
-        viewModel.bottomBarTextViewIsEditingSignal.observeValues { (bottomBarH) in
-            if bottomBarH > self.bottomBarH {
-                self.tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - bottomBarH)
-                self.bottomBar.frame = CGRect(x: 0, y: kScreenH - bottomBarH, width: kScreenW, height: bottomBarH)
+        viewModel.bottomBarTextViewIsEditingSignal.observeValues { (textViewH) in
+            self.bottomBarH = textViewH + 15.0
+            if  self.bottomBarH > 50.0{
+                self.tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - self.bottomBarH)
+                self.bottomBar.frame = CGRect(x: 0, y: kScreenH - self.bottomBarH, width: kScreenW, height: self.bottomBarH)
+                
+//                print("contentTextH:\(self.bottomBarH)self.bottomBar.frame:\(self.bottomBar.frame)")
             }
-//            print("contentTextH:\(bottomBarH)self.bottomBar.frame:\(self.bottomBar.frame)")
         }
         
         
         viewModel.bottomBarTextViewDidClickSendSignal.observeValues({ (inputText) in
+            self.bottomBarH = 50.0
             self.tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - self.bottomBarH)
             self.bottomBar.frame = CGRect(x: 0, y: kScreenH - self.bottomBarH, width: kScreenW, height: self.bottomBarH)
         })

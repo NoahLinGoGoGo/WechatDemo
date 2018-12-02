@@ -117,9 +117,9 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         dataSource = self
         delegate = self
         separatorStyle = .none
-        estimatedRowHeight = 0;
-        estimatedSectionHeaderHeight = 0;
-        estimatedSectionFooterHeight = 0;
+        estimatedRowHeight = 0
+        estimatedSectionHeaderHeight = 0
+        estimatedSectionFooterHeight = 0
         showsVerticalScrollIndicator = false
     }
     
@@ -193,29 +193,24 @@ class LSChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         }
         return 0
     }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // 通知bar  resignFirstResponder()
-        //        viewModel?.observerClick.send(value: "")
-        
-    }
-    
      //MARK:- Private
-    // 重复计算？？ 方案1： cell?.configure 返回值或者闭包 会有异步线程延迟的问题
     func caculateRowHeight() {
+        let cellMargin: CGFloat = 20.0
         RowHeightArray.removeAll()
         for chatViewModel in dataArray! {
             if chatViewModel.msgType == .textMsg {
                 
-                let contentTextHeight  = chatViewModel.textContent.boundingRect(with: CGSize.init(width: Double(kScreenW * 0.6 + 30.0), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : LSFontSize16] ,context: nil).size.height + 8.0
-                RowHeightArray.append(contentTextHeight + 40.0)
+                var contentTextHeight  = chatViewModel.textContent.boundingRect(with: CGSize.init(width: Double(kScreenW * 0.6), height: Double(MAXFLOAT)),options: NSStringDrawingOptions.usesLineFragmentOrigin,attributes: [NSAttributedStringKey.font : LSFontSize16] ,context: nil).size.height 
+
+                if contentTextHeight < 40 {
+                    contentTextHeight = 40
+                }
+                RowHeightArray.append(contentTextHeight + cellMargin * 1.4)
                 
             } else if chatViewModel.msgType == .imageMsg {
                 let defaultImageH: CGFloat = 140.0
-                RowHeightArray.append(defaultImageH + 40.0)
-                
+                RowHeightArray.append(defaultImageH + cellMargin * 0.5)
             }
             
         }

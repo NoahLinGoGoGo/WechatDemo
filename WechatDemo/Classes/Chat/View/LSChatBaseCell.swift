@@ -55,7 +55,6 @@ class LSChatBaseCell: UITableViewCell {
              iconImageView.image = UIImage(named:(viewModel.userViewModel?.icon)!)
         }
         
-        // 背景图片拉伸问题: 1.底部有留白  ，所以bgImageView高度需要加30
         let newBgImage = bgImage.stretchableImage(withLeftCapWidth: Int(bgImage.size.width * 0.5), topCapHeight: Int(bgImage.size.height * 0.5))
         bgImageView.image = newBgImage
         
