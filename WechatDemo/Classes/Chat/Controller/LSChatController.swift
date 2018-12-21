@@ -36,6 +36,8 @@ class LSChatController: UIViewController {
         
     }
     
+    
+    
     func configureUI() {
         tableView = LSChatTableView(viewModel: viewModel)
         tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - bottomBarH)

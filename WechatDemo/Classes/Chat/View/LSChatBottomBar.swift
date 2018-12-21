@@ -45,8 +45,6 @@ class LSChatBottomBar: UIView, UITextViewDelegate {
     }
     
     lazy var recordBtn: UIButton = {
-        
-        
         let recordBtn =  UIButton(type: .custom)
         recordBtn.adjustsImageWhenHighlighted = false
         recordBtn.setBackgroundImage(normalimage, for: .normal)
@@ -199,8 +197,6 @@ class LSChatBottomBar: UIView, UITextViewDelegate {
             recordBtn.frame = textView.frame
             addSubview(recordBtn)
             textView.resignFirstResponder()
-            /** 如果给textView 添加多个手势会有手势失效 iOS Touch: Failed to receive system gesture state notification before next touch
-             */
             
         } else {
             voiceBtn.setBackgroundImage(UIImage(named:"002"), for: .normal)

@@ -25,13 +25,6 @@ class LSChatListController: LSBaseViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
-    
-    
     //MARK:- Function    
     override func initUI() {
         title = "微信"

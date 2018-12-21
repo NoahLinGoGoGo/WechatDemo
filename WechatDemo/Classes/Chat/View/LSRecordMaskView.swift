@@ -13,16 +13,7 @@ class LSRecordMaskView : UIView {
     var viewModel: LSChatViewModel?
     var topBtn = UIButton(type: .custom)
     var bottomLabel = UILabel()
-    
-    /**
-     let offset: CGFloat = 40.0
-     print((recordMaskBtn.imageView?.frame.size.width)!,(recordMaskBtn.imageView?.frame.size.height)!)
-     recordMaskBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -((recordMaskBtn.imageView?.frame.size.width)!), -((recordMaskBtn.imageView?.frame.size.height)!)-offset/2, 0)
-     recordMaskBtn.imageEdgeInsets = UIEdgeInsetsMake(-((recordMaskBtn.titleLabel?.intrinsicContentSize.height)!)-offset/2, 0, 0, -((recordMaskBtn.titleLabel?.intrinsicContentSize.width)!))
-     可以通过同事设置titleEdgeInsets和imageEdgeInsets来设置，但是不能修改imageView的frame
-     
-     VoiceSearchFeedback 图片尺寸问题？
-     */
+
     
     init() {
         super.init(frame: CGRect.init())
