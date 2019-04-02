@@ -13,7 +13,7 @@ class LSVoiceRecordManager: NSObject {
     
     var recorder: AVAudioRecorder?
     var player: AVAudioPlayer?
-    var file_path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+    var file_path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
     
     
     //判断是否允许访问麦克风
@@ -37,7 +37,7 @@ class LSVoiceRecordManager: NSObject {
     }
     
     
-    //开始录音
+    //开始录音，path是文件名
     func beginRecord(path: String) {
         let path = file_path?.appending("/\(path).wav")
         print("开始录音\(path!)")
@@ -112,7 +112,7 @@ class LSVoiceRecordManager: NSObject {
         }
     }
     
-    //播放本地录音文件
+    //播放本地录音文件,path为绝对路径
     func playLocal(path: String) {
 //        print("播放录音\(path)")
         do {
@@ -125,7 +125,7 @@ class LSVoiceRecordManager: NSObject {
     }
     
     
-    // 正在播放
+    // 判断是否正在播放
     func isPlaying() -> Bool {
         if player != nil {
             return player!.isPlaying

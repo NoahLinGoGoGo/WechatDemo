@@ -72,12 +72,12 @@ class LSChatViewModel: LSBaseReqViewModel {
             case 5:
                 let viewModel = LSChatCellViewModel(msgType: .imageMsg, isFromSelf: true)
                 viewModel.id =  String.init(format: "%d", Date().timeIntervalSince1970 + TimeInterval((arc4random() % 1001) + 10000))
-                viewModel.imageUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529476983835&di=a4305f89027a575a62ccc2a1c0d3766a&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F34fae6cd7b899e51a06e25944ea7d933c9950d49.jpg"
+                viewModel.imageUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554183334375&di=b0b9a132b69c0f0a5d45e5cc5dfa308f&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Ffcfaaf51f3deb48f00e06d10fd1f3a292cf57877.jpg"
                 arr.append(viewModel)
             case 6:
                 let viewModel = LSChatCellViewModel(msgType: .imageMsg, isFromSelf: false)
                 viewModel.id =  String.init(format: "%d", Date().timeIntervalSince1970 + TimeInterval((arc4random() % 1001) + 10000))
-                viewModel.imageUrl = "https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=254b5229c5177f3e0f34fa0d40ce3bb9/4afbfbedab64034f8c730299a3c379310b551df7.jpg"
+                viewModel.imageUrl = "https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=28f9f6093dfa828bce239be3cd1e41cd/0eb30f2442a7d9335c52967fa34bd11372f001c7.jpg"
                 arr.append(viewModel)
             default:
                 print("")
