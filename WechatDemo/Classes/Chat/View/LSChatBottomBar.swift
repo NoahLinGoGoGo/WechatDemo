@@ -11,8 +11,15 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 
-class LSChatBottomBar: UIView, UITextViewDelegate {
+public enum LSKeyboardType {
+    case none
+    case system
+    case sticker
+}
+
+class LSChatBottomBar: UIView, UITextViewDelegate, PPStickerKeyboardDelegate {
     
+    //MARK:- Property
     let margin: CGFloat = 10.0
     let img = UIImage(named:"002")
     let normalimage = UIImage(named:"chatBar_recordBg")?.stretchableImage(withLeftCapWidth: 10, topCapHeight: 10)
@@ -27,23 +34,14 @@ class LSChatBottomBar: UIView, UITextViewDelegate {
     var textView = UITextView()
     var isVoiceState = false
     var voiceRecordManager = LSVoiceRecordManager()
-    
-    
-    override var frame: CGRect{
-        didSet{
-            addTopBorder(color: RGB(r: 121, g: 121, b: 121), borderWidth: 0.5)
-            layoutSubviews()
-        }
-    }
-    
-    
-    init(viewModel: LSChatViewModel?) {
-        super.init(frame: CGRect.init())
-        self.viewModel = viewModel
-        initUI()
-        bindData()
-    }
-    
+    var keyboardType = LSKeyboardType.system
+    lazy var stickerKeyboard: PPStickerKeyboard = {
+        let stickerKeyboard = PPStickerKeyboard()
+        stickerKeyboard.frame = CGRect(x: 0, y: 0, width:self.bounds.size.width , height: stickerKeyboard.heightThatFits())
+        stickerKeyboard.delegate = self as? PPStickerKeyboardDelegate
+        return stickerKeyboard
+    }()
+
     lazy var recordBtn: UIButton = {
         let recordBtn =  UIButton(type: .custom)
         recordBtn.adjustsImageWhenHighlighted = false
@@ -59,11 +57,53 @@ class LSChatBottomBar: UIView, UITextViewDelegate {
         return recordBtn
     }()
     
+    override var frame: CGRect{
+        didSet{
+            addTopBorder(color: RGB(r: 121, g: 121, b: 121), borderWidth: 0.5)
+            layoutSubviews()
+        }
+    }
+    
+     //MARK:- LIfe Cycle
+    init(viewModel: LSChatViewModel?) {
+        super.init(frame: CGRect.init())
+        self.viewModel = viewModel
+        initUI()
+        bindData()
+    }
+    
+    
+    
+    
     func bindData() {
         viewModel?.bottomBarTextViewDidClickSendSignal.observeValues({ (inputText) in
             self.textViewH = (self.img?.size.height)! + self.margin * 0.5
             self.textView.frame.size.height = self.textViewH
         })
+    }
+    
+    
+    func changeKeyboard(type: LSKeyboardType)  {
+        textView.resignFirstResponder()
+        if self.keyboardType == type {
+          return
+        }
+        switch type {
+        case .none:
+            faceBtn.setBackgroundImage(UIImage(named:"009"), for: .normal)
+            textView.inputView = nil;
+        case .system:
+            faceBtn.setBackgroundImage(UIImage(named:"009"), for: .normal)
+            textView.inputView = nil;
+            textView.reloadInputViews()
+        case .sticker:
+            
+            faceBtn.setBackgroundImage(UIImage(named:"003"), for: .normal)
+            textView.inputView = stickerKeyboard;
+            textView.reloadInputViews()
+            
+        }
+        keyboardType = type
     }
     
     func initUI() {
@@ -86,6 +126,7 @@ class LSChatBottomBar: UIView, UITextViewDelegate {
         }
         faceBtn.reactive.controlEvents(.touchUpInside).observe { (signal) in
             print("faceBtnClick")
+            self.changeKeyboard(type: (self.keyboardType == .system ? .sticker : .system))
         }
         
         
@@ -144,6 +185,7 @@ class LSChatBottomBar: UIView, UITextViewDelegate {
         
     }
     
+    //MARK:- 录音按钮相关
     @objc fileprivate func recordBtnTouchDown(_ button : UIButton) {
         recordButtonState(state: .touchDown)
         viewModel?.observerBottomBarVoiceBtnClickEvent.send(value: .touchDown)
@@ -230,5 +272,18 @@ class LSChatBottomBar: UIView, UITextViewDelegate {
             
         }
         return true
+    }
+    
+    //MARK:- PPStickerKeyboardDelegate
+    func stickerKeyboardDidClickDeleteButton(_ stickerKeyboard: PPStickerKeyboard!) {
+        print("stickerKeyboardDidClickDeleteButton")
+    }
+    
+    func stickerKeyboardDidClickSendButton(_ stickerKeyboard: PPStickerKeyboard!) {
+        print("stickerKeyboardDidClickSendButton")
+    }
+    
+    func stickerKeyboard(_ stickerKeyboard: PPStickerKeyboard!, didClick emoji: PPEmoji!) {
+        print("stickerKeyboard :\(PPEmoji())")
     }
 }

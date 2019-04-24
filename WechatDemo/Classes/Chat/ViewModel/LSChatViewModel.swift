@@ -11,8 +11,7 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 
-enum RecordBtnEvent : Int {
-    
+enum RecordBtnEvent {
     case touchDown
     case touchUpOutside
     case touchUpInside

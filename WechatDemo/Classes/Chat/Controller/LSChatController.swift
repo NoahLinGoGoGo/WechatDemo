@@ -74,12 +74,12 @@ class LSChatController: UIViewController {
                 self.tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - self.bottomBarH)
                 self.bottomBar.frame = CGRect(x: 0, y: kScreenH - self.bottomBarH, width: kScreenW, height: self.bottomBarH)
                 
-//                print("contentTextH:\(self.bottomBarH)self.bottomBar.frame:\(self.bottomBar.frame)")
+                //                print("contentTextH:\(self.bottomBarH)self.bottomBar.frame:\(self.bottomBar.frame)")
             }
         }
         
         
-        viewModel.bottomBarTextViewDidClickSendSignal.observeValues({ (inputText) in
+    viewModel.bottomBarTextViewDidClickSendSignal.observeValues({ (inputText) in
             self.bottomBarH = 50.0
             self.tableView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - self.bottomBarH)
             self.bottomBar.frame = CGRect(x: 0, y: kScreenH - self.bottomBarH, width: kScreenW, height: self.bottomBarH)

@@ -17,6 +17,7 @@ class LSAppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
         let tabBarVc = LSTabBarController()
         self.window = UIWindow()
         self.window?.backgroundColor = UIColor.white

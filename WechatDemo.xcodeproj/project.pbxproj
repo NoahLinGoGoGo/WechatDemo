@@ -134,6 +134,24 @@
 		CA7D8517212D486300E9DC5B /* LSContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7D8516212D486300E9DC5B /* LSContactListCell.swift */; };
 		CAA2D854214F9F3800F74A21 /* UITabBar+traitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA2D853214F9F3800F74A21 /* UITabBar+traitCollection.swift */; };
 		CAFDF43A21490A4F00F29F98 /* miniprogram_open.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAFDF43921490A4F00F29F98 /* miniprogram_open.wav */; };
+		CD12A5BC2270795D00C2C833 /* PPQueuingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5A82270795D00C2C833 /* PPQueuingScrollView.m */; };
+		CD12A5BD2270795D00C2C833 /* NSAttributedString+PPAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5A92270795D00C2C833 /* NSAttributedString+PPAddition.m */; };
+		CD12A5BE2270795D00C2C833 /* UIScreen+PPAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5AC2270795D00C2C833 /* UIScreen+PPAddition.m */; };
+		CD12A5BF2270795D00C2C833 /* UIScrollView+PPAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5AD2270795D00C2C833 /* UIScrollView+PPAddition.m */; };
+		CD12A5C02270795D00C2C833 /* UIColor+PPAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5AE2270795D00C2C833 /* UIColor+PPAddition.m */; };
+		CD12A5C12270795D00C2C833 /* PPTextBackedString.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5AF2270795D00C2C833 /* PPTextBackedString.m */; };
+		CD12A5C22270795E00C2C833 /* NSString+PPAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5B32270795D00C2C833 /* NSString+PPAddition.m */; };
+		CD12A5C32270795E00C2C833 /* PPSlideLineButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5B42270795D00C2C833 /* PPSlideLineButton.m */; };
+		CD12A5C42270795E00C2C833 /* UIButton+PPAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CD12A5B92270795D00C2C833 /* UIButton+PPAddition.m */; };
+		CD9BD3A3226F529B00B20542 /* InnerStickersInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD9BD395226F529B00B20542 /* InnerStickersInfo.plist */; };
+		CD9BD3A4226F529B00B20542 /* PPStickerDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BD397226F529B00B20542 /* PPStickerDataManager.m */; };
+		CD9BD3A5226F529B00B20542 /* PPEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BD398226F529B00B20542 /* PPEmoji.m */; };
+		CD9BD3A6226F529B00B20542 /* PPSticker.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BD399226F529B00B20542 /* PPSticker.m */; };
+		CD9BD3A7226F529B00B20542 /* Sticker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD9BD39B226F529B00B20542 /* Sticker.bundle */; };
+		CD9BD3A8226F529B00B20542 /* PPEmojiPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BD39C226F529B00B20542 /* PPEmojiPreviewView.m */; };
+		CD9BD3A9226F529B00B20542 /* PPStickerPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BD39D226F529B00B20542 /* PPStickerPageView.m */; };
+		CD9BD3AA226F529B00B20542 /* PPStickerTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BD39E226F529B00B20542 /* PPStickerTextView.m */; };
+		CD9BD3AB226F529B00B20542 /* PPStickerKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9BD39F226F529B00B20542 /* PPStickerKeyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -282,6 +300,42 @@
 		CA7D8516212D486300E9DC5B /* LSContactListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSContactListCell.swift; sourceTree = "<group>"; };
 		CAA2D853214F9F3800F74A21 /* UITabBar+traitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+traitCollection.swift"; sourceTree = "<group>"; };
 		CAFDF43921490A4F00F29F98 /* miniprogram_open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = miniprogram_open.wav; sourceTree = "<group>"; };
+		CD12A5A82270795D00C2C833 /* PPQueuingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPQueuingScrollView.m; sourceTree = "<group>"; };
+		CD12A5A92270795D00C2C833 /* NSAttributedString+PPAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+PPAddition.m"; sourceTree = "<group>"; };
+		CD12A5AA2270795D00C2C833 /* PPSlideLineButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSlideLineButton.h; sourceTree = "<group>"; };
+		CD12A5AB2270795D00C2C833 /* NSString+PPAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PPAddition.h"; sourceTree = "<group>"; };
+		CD12A5AC2270795D00C2C833 /* UIScreen+PPAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+PPAddition.m"; sourceTree = "<group>"; };
+		CD12A5AD2270795D00C2C833 /* UIScrollView+PPAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PPAddition.m"; sourceTree = "<group>"; };
+		CD12A5AE2270795D00C2C833 /* UIColor+PPAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PPAddition.m"; sourceTree = "<group>"; };
+		CD12A5AF2270795D00C2C833 /* PPTextBackedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTextBackedString.m; sourceTree = "<group>"; };
+		CD12A5B02270795D00C2C833 /* UIButton+PPAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPAddition.h"; sourceTree = "<group>"; };
+		CD12A5B12270795D00C2C833 /* PPQueuingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPQueuingScrollView.h; sourceTree = "<group>"; };
+		CD12A5B22270795D00C2C833 /* PPReusablePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPReusablePage.h; sourceTree = "<group>"; };
+		CD12A5B32270795D00C2C833 /* NSString+PPAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PPAddition.m"; sourceTree = "<group>"; };
+		CD12A5B42270795D00C2C833 /* PPSlideLineButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSlideLineButton.m; sourceTree = "<group>"; };
+		CD12A5B52270795D00C2C833 /* NSAttributedString+PPAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+PPAddition.h"; sourceTree = "<group>"; };
+		CD12A5B62270795D00C2C833 /* UIScrollView+PPAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PPAddition.h"; sourceTree = "<group>"; };
+		CD12A5B72270795D00C2C833 /* UIScreen+PPAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+PPAddition.h"; sourceTree = "<group>"; };
+		CD12A5B82270795D00C2C833 /* PPUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPUtil.h; sourceTree = "<group>"; };
+		CD12A5B92270795D00C2C833 /* UIButton+PPAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPAddition.m"; sourceTree = "<group>"; };
+		CD12A5BA2270795D00C2C833 /* PPTextBackedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTextBackedString.h; sourceTree = "<group>"; };
+		CD12A5BB2270795D00C2C833 /* UIColor+PPAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PPAddition.h"; sourceTree = "<group>"; };
+		CD9BD393226F529B00B20542 /* PPStickerTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStickerTextView.h; sourceTree = "<group>"; };
+		CD9BD394226F529B00B20542 /* PPStickerPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStickerPageView.h; sourceTree = "<group>"; };
+		CD9BD395226F529B00B20542 /* InnerStickersInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InnerStickersInfo.plist; sourceTree = "<group>"; };
+		CD9BD396226F529B00B20542 /* PPEmojiPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPEmojiPreviewView.h; sourceTree = "<group>"; };
+		CD9BD397226F529B00B20542 /* PPStickerDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStickerDataManager.m; sourceTree = "<group>"; };
+		CD9BD398226F529B00B20542 /* PPEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPEmoji.m; sourceTree = "<group>"; };
+		CD9BD399226F529B00B20542 /* PPSticker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSticker.m; sourceTree = "<group>"; };
+		CD9BD39A226F529B00B20542 /* PPStickerKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStickerKeyboard.h; sourceTree = "<group>"; };
+		CD9BD39B226F529B00B20542 /* Sticker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Sticker.bundle; sourceTree = "<group>"; };
+		CD9BD39C226F529B00B20542 /* PPEmojiPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPEmojiPreviewView.m; sourceTree = "<group>"; };
+		CD9BD39D226F529B00B20542 /* PPStickerPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStickerPageView.m; sourceTree = "<group>"; };
+		CD9BD39E226F529B00B20542 /* PPStickerTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStickerTextView.m; sourceTree = "<group>"; };
+		CD9BD39F226F529B00B20542 /* PPStickerKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPStickerKeyboard.m; sourceTree = "<group>"; };
+		CD9BD3A0226F529B00B20542 /* PPSticker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSticker.h; sourceTree = "<group>"; };
+		CD9BD3A1226F529B00B20542 /* PPEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPEmoji.h; sourceTree = "<group>"; };
+		CD9BD3A2226F529B00B20542 /* PPStickerDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPStickerDataManager.h; sourceTree = "<group>"; };
 		CDDA60332661D267B819B76C /* Pods_WechatDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WechatDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81FFB54613A8AB755739A35 /* Pods-WechatDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WechatDemo/Pods-WechatDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -350,6 +404,7 @@
 			children = (
 				CA1358AE212D5C8B00E58717 /* BMChineseStringSort */,
 				CA1358B2212D5C9400E58717 /* NirKxMenu */,
+				CD9BD392226F529B00B20542 /* Keyboard */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -735,6 +790,57 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CD12A5A72270795D00C2C833 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CD12A5A82270795D00C2C833 /* PPQueuingScrollView.m */,
+				CD12A5A92270795D00C2C833 /* NSAttributedString+PPAddition.m */,
+				CD12A5AA2270795D00C2C833 /* PPSlideLineButton.h */,
+				CD12A5AB2270795D00C2C833 /* NSString+PPAddition.h */,
+				CD12A5AC2270795D00C2C833 /* UIScreen+PPAddition.m */,
+				CD12A5AD2270795D00C2C833 /* UIScrollView+PPAddition.m */,
+				CD12A5AE2270795D00C2C833 /* UIColor+PPAddition.m */,
+				CD12A5AF2270795D00C2C833 /* PPTextBackedString.m */,
+				CD12A5B02270795D00C2C833 /* UIButton+PPAddition.h */,
+				CD12A5B12270795D00C2C833 /* PPQueuingScrollView.h */,
+				CD12A5B22270795D00C2C833 /* PPReusablePage.h */,
+				CD12A5B32270795D00C2C833 /* NSString+PPAddition.m */,
+				CD12A5B42270795D00C2C833 /* PPSlideLineButton.m */,
+				CD12A5B52270795D00C2C833 /* NSAttributedString+PPAddition.h */,
+				CD12A5B62270795D00C2C833 /* UIScrollView+PPAddition.h */,
+				CD12A5B72270795D00C2C833 /* UIScreen+PPAddition.h */,
+				CD12A5B82270795D00C2C833 /* PPUtil.h */,
+				CD12A5B92270795D00C2C833 /* UIButton+PPAddition.m */,
+				CD12A5BA2270795D00C2C833 /* PPTextBackedString.h */,
+				CD12A5BB2270795D00C2C833 /* UIColor+PPAddition.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		CD9BD392226F529B00B20542 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CD12A5A72270795D00C2C833 /* Util */,
+				CD9BD393226F529B00B20542 /* PPStickerTextView.h */,
+				CD9BD394226F529B00B20542 /* PPStickerPageView.h */,
+				CD9BD395226F529B00B20542 /* InnerStickersInfo.plist */,
+				CD9BD396226F529B00B20542 /* PPEmojiPreviewView.h */,
+				CD9BD397226F529B00B20542 /* PPStickerDataManager.m */,
+				CD9BD398226F529B00B20542 /* PPEmoji.m */,
+				CD9BD399226F529B00B20542 /* PPSticker.m */,
+				CD9BD39A226F529B00B20542 /* PPStickerKeyboard.h */,
+				CD9BD39B226F529B00B20542 /* Sticker.bundle */,
+				CD9BD39C226F529B00B20542 /* PPEmojiPreviewView.m */,
+				CD9BD39D226F529B00B20542 /* PPStickerPageView.m */,
+				CD9BD39E226F529B00B20542 /* PPStickerTextView.m */,
+				CD9BD39F226F529B00B20542 /* PPStickerKeyboard.m */,
+				CD9BD3A0226F529B00B20542 /* PPSticker.h */,
+				CD9BD3A1226F529B00B20542 /* PPEmoji.h */,
+				CD9BD3A2226F529B00B20542 /* PPStickerDataManager.h */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -865,6 +971,7 @@
 				A7F5E31020CB7117008C46BF /* tabbar_discover@3x.png in Resources */,
 				A75B5B3D20EDC5370052B5B2 /* chat_receiver_audio_playing002.png in Resources */,
 				A7535A3220D9DCF200626AE7 /* ReceiverShiteBG@2x.png in Resources */,
+				CD9BD3A3226F529B00B20542 /* InnerStickersInfo.plist in Resources */,
 				A75F6B3720DDFA950054ABE0 /* 002@2x.png in Resources */,
 				A75F6B3920DDFA950054ABE0 /* 005@2x.png in Resources */,
 				A7F5E30820CB70FD008C46BF /* tabbar_contacts@2x.png in Resources */,
@@ -880,6 +987,7 @@
 				A7F5E32420CB713A008C46BF /* tabbar_meHL@2x.png in Resources */,
 				A7F5E33A20CB8695008C46BF /* icon4.jpg in Resources */,
 				CA188D2C212E9EEB00E7DF41 /* ff_IconSearch1@3x.png in Resources */,
+				CD9BD3A7226F529B00B20542 /* Sticker.bundle in Resources */,
 				A75B5B3A20EDC5370052B5B2 /* chat_receiver_audio_playing000@2x.png in Resources */,
 				CA188D2B212E9EEB00E7DF41 /* ff_IconSearch1@2x.png in Resources */,
 				A7F5E30F20CB7117008C46BF /* tabbar_discover@2x.png in Resources */,
@@ -967,8 +1075,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9BD3A5226F529B00B20542 /* PPEmoji.m in Sources */,
 				A7FFE7D720E3871100E3C47E /* LSBaseViewController.swift in Sources */,
 				A7F5E32F20CB7CC4008C46BF /* LSGolbal.swift in Sources */,
+				CD12A5C42270795E00C2C833 /* UIButton+PPAddition.m in Sources */,
 				A7F5E32D20CB7293008C46BF /* LSMeController.swift in Sources */,
 				CA7D126521393FD400F9785D /* LSTopMiniProgramView.swift in Sources */,
 				A73043B320E4DF9200BCF5B2 /* LSChatBaseCell.swift in Sources */,
@@ -977,28 +1087,42 @@
 				CA7D8513212D3FAB00E9DC5B /* LSContactListViewModel.swift in Sources */,
 				A7F5E30120CB6C6C008C46BF /* LSTabBarController.swift in Sources */,
 				A703A9C420DCF4A6002E792F /* LSChatBottomBar.swift in Sources */,
+				CD9BD3A9226F529B00B20542 /* PPStickerPageView.m in Sources */,
 				A7FFE7D520E383F400E3C47E /* LSChatListTableView.swift in Sources */,
 				A7F9130520D3A53700A2DCC2 /* LSChatTextCell.swift in Sources */,
 				A701E72420ECC72F0055A05F /* LSChatVoiceCell.swift in Sources */,
+				CD12A5BF2270795D00C2C833 /* UIScrollView+PPAddition.m in Sources */,
 				A7487BD320CBC2870001DA9E /* LSChatListCell.swift in Sources */,
 				A7F5E32720CB71D9008C46BF /* LSChatListController.swift in Sources */,
 				A7535A3C20D9F7E500626AE7 /* NirKxMenu.m in Sources */,
+				CD12A5C32270795E00C2C833 /* PPSlideLineButton.m in Sources */,
 				A7F5E2EC20CB5AA4008C46BF /* LSAppDelegate.swift in Sources */,
+				CD9BD3AA226F529B00B20542 /* PPStickerTextView.m in Sources */,
 				A759AD9D20E5D82A0047B4DC /* LSRequest.swift in Sources */,
+				CD12A5BE2270795D00C2C833 /* UIScreen+PPAddition.m in Sources */,
 				A7F5E32B20CB726E008C46BF /* LSDiscoveryController.swift in Sources */,
+				CD12A5BC2270795D00C2C833 /* PPQueuingScrollView.m in Sources */,
 				A76C2ED020EA05B300514D6B /* LSChatCellViewModel.swift in Sources */,
+				CD12A5BD2270795D00C2C833 /* NSAttributedString+PPAddition.m in Sources */,
+				CD12A5C22270795E00C2C833 /* NSString+PPAddition.m in Sources */,
+				CD9BD3AB226F529B00B20542 /* PPStickerKeyboard.m in Sources */,
 				A7F5E30320CB6C88008C46BF /* LSNavigationController.swift in Sources */,
+				CD9BD3A4226F529B00B20542 /* PPStickerDataManager.m in Sources */,
 				CA1358B1212D5C8B00E58717 /* BMChineseSort.m in Sources */,
 				A753EF2720D207EB0052C427 /* LSChatController.swift in Sources */,
 				A7E6DBDE20CF63C900F294D4 /* LSChatListViewModel.swift in Sources */,
+				CD12A5C02270795D00C2C833 /* UIColor+PPAddition.m in Sources */,
 				A701E71620EC772E0055A05F /* LSRecordMaskView.swift in Sources */,
 				CA188D15212E8F3900E7DF41 /* LSDiscoveryViewModel.swift in Sources */,
 				A709004420D20982002DB3BD /* LSChatViewModel.swift in Sources */,
 				A709004820D21BFD002DB3BD /* LSSearchResultViewController.swift in Sources */,
+				CD12A5C12270795D00C2C833 /* PPTextBackedString.m in Sources */,
+				CD9BD3A8226F529B00B20542 /* PPEmojiPreviewView.m in Sources */,
 				CA7D8517212D486300E9DC5B /* LSContactListCell.swift in Sources */,
 				A721520520E247A8006053C7 /* UIView+Border.swift in Sources */,
 				A701E72220ECBE4C0055A05F /* LSVoiceRecordManager.swift in Sources */,
 				A76C2ED220EA077100514D6B /* LSChatBaseModel.swift in Sources */,
+				CD9BD3A6226F529B00B20542 /* PPSticker.m in Sources */,
 				CA188D36212EA71200E7DF41 /* LSMeViewModel.swift in Sources */,
 				CA7D1267213946A000F9785D /* LSTopMiniProgramCell.swift in Sources */,
 				A7F9131B20D3AF1500A2DCC2 /* LSChatTableView.swift in Sources */,
@@ -1123,7 +1247,7 @@
 			baseConfigurationReference = D81FFB54613A8AB755739A35 /* Pods-WechatDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CP8U3BEY8;
@@ -1144,7 +1268,7 @@
 			baseConfigurationReference = A76137FDB65B85F7A08B6267 /* Pods-WechatDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CP8U3BEY8;
