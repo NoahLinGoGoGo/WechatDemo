@@ -18,8 +18,8 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
     let blankMaskView = UIView()
     var bar: UISearchBar?
     var miniProgramViewIsFullShow = false
-    var tableViewOriginY: CGFloat? = nil
-    var tableViewOriginH: CGFloat? = nil
+    var tableViewOriginY: CGFloat? = Height_NavBarAndStatusBar
+    var tableViewOriginH: CGFloat? = kScreenH - Height_TabBar - Height_NavBarAndStatusBar
     var tableViewScrollY: CGFloat = -Height_NavBarAndStatusBar
     var voiceRecordManager = LSVoiceRecordManager()
     
@@ -171,6 +171,8 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
         if scrollView != self {
             return
         }
+//        print("scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
+
         //print("scrollViewDidScrollscrollViewDidScrollscrollViewDidScroll")
         // rac传递偏移量给viewmodel
         let offsetY = scrollView.contentOffset.y
@@ -181,24 +183,26 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
             tableViewOriginH = self.frame.size.height
         }
         
-//        print("scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
 //        print("tableViewOriginY: \(tableViewOriginY ?? -1)")
 //        print("self.frame.origin.y: \(self.frame.origin.y)")
         
         
         // 动画 + 加载数组
         if offsetY < -Height_NavBarAndStatusBar && offsetY > -miniProgramDefaultH * 0.5 {
-            if self.frame.origin.y < miniProgramDefaultH {
-                viewModel?.miniProgramDataAction?.apply().start()
-            }
+            // 三个点的加载gif动画
+//            if self.frame.origin.y < miniProgramDefaultH {
+//                viewModel?.miniProgramDataAction?.apply().start()
+//            }
             viewModel?.observerMiniProgram.send(value: (offsetY,false))
 
             // 手指向下移动的时候，用户是否大力拖拽，只有显示的数据是第一行的时候才让显示miniProgramView
             // 去掉bounds效果(不让弹回)   +   播放音效
-        } else if (offsetY < -miniProgramDefaultH * 0.5 && !miniProgramViewIsFullShow && tableViewScrollY <= -Height_NavBarAndStatusBar  && tableViewScrollY >= -Height_NavBarAndStatusBar - 30){
+//        } else if (offsetY < -miniProgramDefaultH * 0.5 && !miniProgramViewIsFullShow && tableViewScrollY <= -Height_NavBarAndStatusBar  && tableViewScrollY >= -Height_NavBarAndStatusBar - 30){
+            } else if (offsetY < -miniProgramDefaultH * 0.5 && !miniProgramViewIsFullShow && tableViewScrollY <= 0  && tableViewScrollY >= -30){
+            viewModel?.miniProgramDataAction?.apply().start()
             UIView.animate(withDuration: 0.2, animations: {
                 var rect = self.frame
-                rect.origin.y += miniProgramDefaultH + Height_NavBarAndStatusBar
+                rect.origin.y += miniProgramDefaultH
                 rect.size.height -= miniProgramDefaultH
                 self.frame = rect
                 scrollView.bounces = false
@@ -215,8 +219,9 @@ class LSChatListTableView: UITableView, UITableViewDelegate, UITableViewDataSour
             viewModel?.observerMiniProgram.send(value: (offsetY,scrollView.bounces))
             
             /*
-             手指向上移动的时候，判断用户是否大力拖拽，这时候显示的数据应该是是第一行，隐藏miniProgramView   self.frame.origin.y <= miniProgramDefaultH * 0.9， 因为微信这里没有处理，所以暂时没有做
+            手指向上移动的时候，判断用户是否大力拖拽，这时候显示的数据应该是是第一行，隐藏miniProgramView   self.frame.origin.y <= miniProgramDefaultH * 0.9， 因为微信这里没有处理，所以暂时没有做
              */
+            
         } else if (offsetY >= 1 && miniProgramViewIsFullShow){
             scrollView.bounces = true
             UIView.animate(withDuration: 0.2) {

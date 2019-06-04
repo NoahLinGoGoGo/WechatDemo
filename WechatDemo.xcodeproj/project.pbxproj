@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		208FFEB148D34396503A65B9 /* Pods_WechatDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDA60332661D267B819B76C /* Pods_WechatDemo.framework */; };
+		3C879AEF22812F870093116F /* delete-emoji@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C879AEC22812F860093116F /* delete-emoji@3x.png */; };
+		3C879AF022812F870093116F /* delete-emoji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C879AED22812F860093116F /* delete-emoji@2x.png */; };
+		3C879AF122812F870093116F /* delete-emoji.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C879AEE22812F860093116F /* delete-emoji.png */; };
+		3C879AF3228163460093116F /* String+Wechat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C879AF2228163460093116F /* String+Wechat.swift */; };
 		A701E70920EB28DE0055A05F /* chatBar_recordSelectedBg.png in Resources */ = {isa = PBXBuildFile; fileRef = A701E70620EB28DE0055A05F /* chatBar_recordSelectedBg.png */; };
 		A701E70A20EB28DE0055A05F /* chatBar_recordBg.png in Resources */ = {isa = PBXBuildFile; fileRef = A701E70720EB28DE0055A05F /* chatBar_recordBg.png */; };
 		A701E71220EC722B0055A05F /* VoiceSearchFeedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A701E71120EC722B0055A05F /* VoiceSearchFeedback@2x.png */; };
@@ -168,6 +172,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C879AEC22812F860093116F /* delete-emoji@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-emoji@3x.png"; sourceTree = "<group>"; };
+		3C879AED22812F860093116F /* delete-emoji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-emoji@2x.png"; sourceTree = "<group>"; };
+		3C879AEE22812F860093116F /* delete-emoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-emoji.png"; sourceTree = "<group>"; };
+		3C879AF2228163460093116F /* String+Wechat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Wechat.swift"; sourceTree = "<group>"; };
 		A701E70620EB28DE0055A05F /* chatBar_recordSelectedBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_recordSelectedBg.png; sourceTree = "<group>"; };
 		A701E70720EB28DE0055A05F /* chatBar_recordBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatBar_recordBg.png; sourceTree = "<group>"; };
 		A701E71120EC722B0055A05F /* VoiceSearchFeedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoiceSearchFeedback@2x.png"; sourceTree = "<group>"; };
@@ -376,6 +384,7 @@
 			children = (
 				A7535A3920D9F7E400626AE7 /* WechatDemo-Bridging-Header.h */,
 				A721520420E247A8006053C7 /* UIView+Border.swift */,
+				3C879AF2228163460093116F /* String+Wechat.swift */,
 				CAA2D853214F9F3800F74A21 /* UITabBar+traitCollection.swift */,
 				A759AD9C20E5D82A0047B4DC /* LSRequest.swift */,
 			);
@@ -442,6 +451,9 @@
 		A75F6B2D20DDFA950054ABE0 /* chatBar */ = {
 			isa = PBXGroup;
 			children = (
+				3C879AEE22812F860093116F /* delete-emoji.png */,
+				3C879AED22812F860093116F /* delete-emoji@2x.png */,
+				3C879AEC22812F860093116F /* delete-emoji@3x.png */,
 				A75F6B2E20DDFA950054ABE0 /* 001@2x.png */,
 				A75F6B2F20DDFA950054ABE0 /* 002@2x.png */,
 				A75F6B3020DDFA950054ABE0 /* 003@2x.png */,
@@ -928,6 +940,7 @@
 				CA188D4A212EA95B00E7DF41 /* MoreMyFavorites@2x.png in Resources */,
 				CA188D47212EA95B00E7DF41 /* MoreMyBankCard@3x.png in Resources */,
 				CAFDF43A21490A4F00F29F98 /* miniprogram_open.wav in Resources */,
+				3C879AF022812F870093116F /* delete-emoji@2x.png in Resources */,
 				A7F5E31320CB7120008C46BF /* tabbar_discoverHL@2x.png in Resources */,
 				A7535A3120D9DCF200626AE7 /* ReceiverGreenBG@2x.png in Resources */,
 				CA188D25212E9EEB00E7DF41 /* ff_IconShake@2x.png in Resources */,
@@ -936,6 +949,7 @@
 				CA188D2E212E9EEB00E7DF41 /* ff_IconBrowse1@2x.png in Resources */,
 				CA188D49212EA95B00E7DF41 /* MoreMyAlbum@2x.png in Resources */,
 				A7535A3720D9DCF200626AE7 /* SenderWhiteBG@2x.png in Resources */,
+				3C879AF122812F870093116F /* delete-emoji.png in Resources */,
 				A701E70920EB28DE0055A05F /* chatBar_recordSelectedBg.png in Resources */,
 				CA188D29212E9EEB00E7DF41 /* ff_IconBrowse1@3x.png in Resources */,
 				A75B5B3F20EDC5370052B5B2 /* chat_receiver_audio_playing003.png in Resources */,
@@ -995,6 +1009,7 @@
 				A7535A3420D9DCF200626AE7 /* SenderAppNodeBkg_HL.png in Resources */,
 				A7F5E33820CB8695008C46BF /* icon0.jpg in Resources */,
 				CA188D2A212E9EEB00E7DF41 /* MoreWeApp@3x.png in Resources */,
+				3C879AEF22812F870093116F /* delete-emoji@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,6 +1102,7 @@
 				CA7D8513212D3FAB00E9DC5B /* LSContactListViewModel.swift in Sources */,
 				A7F5E30120CB6C6C008C46BF /* LSTabBarController.swift in Sources */,
 				A703A9C420DCF4A6002E792F /* LSChatBottomBar.swift in Sources */,
+				3C879AF3228163460093116F /* String+Wechat.swift in Sources */,
 				CD9BD3A9226F529B00B20542 /* PPStickerPageView.m in Sources */,
 				A7FFE7D520E383F400E3C47E /* LSChatListTableView.swift in Sources */,
 				A7F9130520D3A53700A2DCC2 /* LSChatTextCell.swift in Sources */,
@@ -1249,13 +1265,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5CP8U3BEY8;
+				DEVELOPMENT_TEAM = 4X4T6YCT2N;
 				INFOPLIST_FILE = "$(SRCROOT)/WechatDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linshengqi.WechatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WechatDemo/Classes/Base/Helper/WechatDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1270,13 +1288,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5CP8U3BEY8;
+				DEVELOPMENT_TEAM = 4X4T6YCT2N;
 				INFOPLIST_FILE = "$(SRCROOT)/WechatDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linshengqi.WechatDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WechatDemo/Classes/Base/Helper/WechatDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

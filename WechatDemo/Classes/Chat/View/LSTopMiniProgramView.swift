@@ -80,7 +80,7 @@ class LSTopMiniProgramView: UIView, UICollectionViewDataSource, UICollectionView
     
         viewModel?.chatListScrolltoTopSignal.observeValues { (offsetY, isShow) in
 //            print("viewModel.chatListScrolltoTopSignal.observeValues\(offsetY)")
-            if self.collectionView.superview == nil && offsetY != -Height_NavBarAndStatusBar{
+            if self.collectionView.superview == nil && offsetY != -Height_NavBarAndStatusBar {
                 self.addSubview(self.collectionView)
                 self.backgroundColor = RGB(r: 69, g: 69, b: 69)
             }

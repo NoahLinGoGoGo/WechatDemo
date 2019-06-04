@@ -32,7 +32,8 @@ class LSChatListController: LSBaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "addadd")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showChatListMenu))
         
         let tableView = LSChatListTableView(viewModel: viewModel, bar: bar)
-        tableView.frame = view.bounds
+//        tableView.frame = view.bounds
+        tableView.frame = CGRect(x: 0, y: Height_NavBarAndStatusBar, width: kScreenW, height: kScreenH - Height_TabBar - Height_NavBarAndStatusBar)
         view.addSubview(tableView)
         
         // viewModel 中处理topMiniProgramView数据与交互
